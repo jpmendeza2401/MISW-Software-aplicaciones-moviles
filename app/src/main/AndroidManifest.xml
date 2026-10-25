@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
@@ -13,22 +14,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplicacionVinilos">
-        <!-- HU01: el listado de álbumes es la pantalla de inicio -->
+
+        <!-- HU01: listado de álbumes, pantalla de inicio -->
         <activity
             android:name=".ui.AlbumListActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+        <!-- Actividad principal del ejemplo de HU01 -->
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize">
-            <!-- Ejemplo del GET de banda: ya no es la pantalla de inicio -->
-        </activity>
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- HU02: detalle del álbum -->
+        <activity
+            android:name=".ui.AlbumDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AplicacionVinilos.Groove" />
+
     </application>
 
 </manifest>

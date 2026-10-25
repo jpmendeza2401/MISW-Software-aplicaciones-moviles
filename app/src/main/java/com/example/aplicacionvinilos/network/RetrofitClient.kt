@@ -6,11 +6,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
-    val apiService: ApiService by lazy {
+    private val retrofit: Retrofit by lazy {
         Retrofit.Builder()
             .baseUrl(ApiConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(ApiService::class.java)
     }
+
+    val apiService: ApiService by lazy { retrofit.create(ApiService::class.java) }
+
+    val albumService: AlbumService by lazy { retrofit.create(AlbumService::class.java) }
 }

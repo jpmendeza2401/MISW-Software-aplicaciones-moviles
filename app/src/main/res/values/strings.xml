@@ -6,4 +6,15 @@
     <string name="error_ids_invalidos">Ingresa un ID de álbum y un ID de banda válidos</string>
     <string name="error_prefijo">Error: %1$s</string>
     <string name="resultado_banda">ID: %1$d\nNombre: %2$s\nFecha de creación: %3$s\nImagen: %4$s\nDescripción: %5$s</string>
+    <string name="ver_detalle">Ver detalle del álbum</string>
+    <string name="error_generico">Ocurrió un error. Intenta de nuevo más tarde.</string>
+    <string name="detalle_album">Detalle del álbum</string>
+    <string name="volver">Volver</string>
+    <string name="portada">Portada del álbum</string>
+    <string name="genero">Género</string>
+    <string name="sello_discografico">Sello discográfico</string>
+    <string name="tracks_title">Tracks</string>
+    <string name="tracks_empty">Aún no hay tracks</string>
+    <string name="comments_title">Comentarios</string>
+    <string name="comments_empty">Aún no hay comentarios</string>
 </resources>
