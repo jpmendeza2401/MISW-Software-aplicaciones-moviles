@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AplicacionVinilos</string>
+    <string name="hint_album_id">ID del álbum</string>
+    <string name="hint_band_id">ID de la banda</string>
+    <string name="buscar">Buscar</string>
+    <string name="error_ids_invalidos">Ingresa un ID de álbum y un ID de banda válidos</string>
+    <string name="error_prefijo">Error: %1$s</string>
+    <string name="resultado_banda">ID: %1$d\nNombre: %2$s\nFecha de creación: %3$s\nImagen: %4$s\nDescripción: %5$s</string>
 </resources>
