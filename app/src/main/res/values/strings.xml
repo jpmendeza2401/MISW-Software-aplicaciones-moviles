@@ -8,14 +8,13 @@
     <string name="resultado_banda">ID: %1$d\nNombre: %2$s\nFecha de creación: %3$s\nImagen: %4$s\nDescripción: %5$s</string>
     <string name="ver_detalle">Ver detalle del álbum</string>
     <string name="error_generico">Ocurrió un error. Intenta de nuevo más tarde.</string>
-    <string name="cover_format">Portada: %1$s</string>
-    <string name="performers_format">Artista: %1$s</string>
-    <string name="release_date_format">Fecha de lanzamiento: %1$s</string>
-    <string name="genre_format">Género: %1$s</string>
-    <string name="record_label_format">Sello discográfico: %1$s</string>
+    <string name="detalle_album">Detalle del álbum</string>
+    <string name="volver">Volver</string>
+    <string name="portada">Portada del álbum</string>
+    <string name="genero">Género</string>
+    <string name="sello_discografico">Sello discográfico</string>
     <string name="tracks_title">Tracks</string>
     <string name="tracks_empty">Aún no hay tracks</string>
     <string name="comments_title">Comentarios</string>
     <string name="comments_empty">Aún no hay comentarios</string>
-    <string name="rating_format">Calificación: %1$d</string>
 </resources>

@@ -1,18 +1,19 @@
 package com.example.aplicacionvinilos.ui
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.aplicacionvinilos.R
+import com.bumptech.glide.Glide
 import com.example.aplicacionvinilos.data.model.Album
-import com.example.aplicacionvinilos.data.model.Comment
-import com.example.aplicacionvinilos.data.model.Track
 import com.example.aplicacionvinilos.databinding.ActivityAlbumDetailBinding
-import com.example.aplicacionvinilos.ui.adapters.TextRowAdapter
+import com.example.aplicacionvinilos.ui.adapters.CommentAdapter
+import com.example.aplicacionvinilos.ui.adapters.TrackAdapter
 import com.example.aplicacionvinilos.viewmodels.AlbumViewModel
 import com.example.aplicacionvinilos.viewmodels.UiState
 
@@ -21,14 +22,15 @@ class AlbumDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAlbumDetailBinding
     private val viewModel: AlbumViewModel by viewModels()
 
-    private val trackAdapter = TextRowAdapter<Track> { it.name to it.duration }
-    private val commentAdapter = TextRowAdapter<Comment> {
-        it.description to getString(R.string.rating_format, it.rating)
-    }
+    private val trackAdapter = TrackAdapter()
+    private val commentAdapter = CommentAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.dark(Color.TRANSPARENT),
+            navigationBarStyle = SystemBarStyle.dark(Color.TRANSPARENT)
+        )
         binding = ActivityAlbumDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
@@ -37,6 +39,7 @@ class AlbumDetailActivity : AppCompatActivity() {
             insets
         }
 
+        binding.toolbar.setNavigationOnClickListener { finish() }
         binding.tracksList.adapter = trackAdapter
         binding.commentsList.adapter = commentAdapter
         viewModel.album.observe(this) { render(it) }
@@ -57,16 +60,12 @@ class AlbumDetailActivity : AppCompatActivity() {
     }
 
     private fun show(album: Album) {
-        binding.coverText.text = getString(R.string.cover_format, album.cover)
+        Glide.with(this).load(album.cover).centerCrop().into(binding.coverImage)
         binding.nameText.text = album.name
-        binding.performersText.text = getString(
-            R.string.performers_format, album.performers.joinToString { it.name }
-        )
-        binding.releaseDateText.text = getString(
-            R.string.release_date_format, album.releaseDate.substringBefore(DATE_TIME_SEPARATOR)
-        )
-        binding.genreText.text = getString(R.string.genre_format, album.genre)
-        binding.recordLabelText.text = getString(R.string.record_label_format, album.recordLabel)
+        binding.performersText.text = album.performers.joinToString { it.name }
+        binding.releaseDateText.text = album.releaseDate.substringBefore(YEAR_SEPARATOR)
+        binding.genreText.text = album.genre
+        binding.recordLabelText.text = album.recordLabel
         binding.descriptionText.text = album.description
 
         trackAdapter.submitList(album.tracks)
@@ -78,6 +77,6 @@ class AlbumDetailActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_ALBUM_ID = "album_id"
         private const val INVALID_ID = -1
-        private const val DATE_TIME_SEPARATOR = 'T'
+        private const val YEAR_SEPARATOR = '-'
     }
 }

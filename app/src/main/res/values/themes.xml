@@ -6,4 +6,50 @@
     </style>
 
     <style name="Theme.AplicacionVinilos" parent="Base.Theme.AplicacionVinilos" />
+
+    <style name="Theme.AplicacionVinilos.Groove" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/groove_primary</item>
+        <item name="colorOnPrimary">@color/groove_on_primary</item>
+        <item name="android:colorBackground">@color/groove_canvas</item>
+        <item name="colorSurface">@color/groove_canvas</item>
+        <item name="colorOnSurface">@color/groove_text_primary</item>
+        <item name="android:textColorPrimary">@color/groove_text_primary</item>
+        <item name="android:textColorSecondary">@color/groove_text_muted</item>
+        <item name="android:windowBackground">@color/groove_canvas</item>
+        <item name="android:fontFamily">@font/manrope</item>
+    </style>
+
+    <style name="Groove.Text.Headline" parent="@android:style/TextAppearance.Material">
+        <item name="android:fontFamily">@font/playfair_display</item>
+        <item name="android:textColor">@color/groove_text_primary</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textFontWeight">700</item>
+    </style>
+
+    <style name="Groove.Text.Section" parent="@android:style/TextAppearance.Material">
+        <item name="android:fontFamily">@font/playfair_display</item>
+        <item name="android:textColor">@color/groove_text_primary</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+
+    <style name="Groove.Text.Title" parent="@android:style/TextAppearance.Material">
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="android:textColor">@color/groove_text_primary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+
+    <style name="Groove.Text.Body" parent="@android:style/TextAppearance.Material">
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="android:textColor">@color/groove_text_muted</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="Groove.Text.Meta" parent="@android:style/TextAppearance.Material">
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="android:textColor">@color/groove_text_subtle</item>
+        <item name="android:textSize">14sp</item>
+    </style>
 </resources>

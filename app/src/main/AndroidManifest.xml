@@ -25,7 +25,8 @@
         </activity>
         <activity
             android:name=".ui.AlbumDetailActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AplicacionVinilos.Groove" />
     </application>
 
 </manifest>
