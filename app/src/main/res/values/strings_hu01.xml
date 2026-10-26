@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- HU01: listado de álbumes. Archivo propio para no chocar con los textos de otras HU. -->
+<resources>
+    <string name="albumes">Álbumes</string>
+    <string name="portada_album">Portada del álbum</string>
+    <string name="sin_artista">Sin artista asociado</string>
+    <string name="sin_albumes">Aún no hay álbumes en el catálogo</string>
+    <string name="reintentar">Reintentar</string>
+</resources>

@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="groove_canvas">#121113</color>
+    <color name="groove_sleeve">#1A181B</color>
+    <color name="groove_deck">#242126</color>
+    <color name="groove_text_primary">#F5EFEB</color>
+    <color name="groove_text_muted">#D8CFCA</color>
+    <color name="groove_text_subtle">#7E7774</color>
+    <color name="groove_primary">#F4C46A</color>
+    <color name="groove_on_primary">#121113</color>
+    <color name="groove_hairline">#0DF5EFEB</color>
+    <color name="groove_card_border">#0FF5EFEB</color>
 </resources>
