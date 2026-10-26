@@ -1,52 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#100F0D"
     tools:context=".ui.AlbumListActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:title="@string/albumes" />
+        android:background="#100F0D"
+        app:title="@string/albumes"
+        app:titleTextColor="#F5F0E6"
+        app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <!-- Éxito: cuadrícula de 2 columnas -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/albumsList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            android:padding="10dp"
+            android:padding="8dp"
             android:visibility="gone"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2" />
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-        <!-- Cargando -->
         <ProgressBar
             android:id="@+id/progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:indeterminateTint="#D8AD4A"
             android:visibility="gone" />
 
-        <!-- Vacío -->
         <TextView
             android:id="@+id/emptyText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/sin_albumes"
+            android:textColor="#F5F0E6"
             android:visibility="gone" />
 
-        <!-- Error -->
         <LinearLayout
             android:id="@+id/errorGroup"
             android:layout_width="match_parent"
@@ -62,6 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:textColor="#F5F0E6"
                 android:textAppearance="?attr/textAppearanceBodyLarge" />
 
             <Button
@@ -69,7 +73,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="@string/reintentar" />
+                android:text="@string/reintentar"
+                android:textColor="#100F0D"
+                android:backgroundTint="#D8AD4A" />
         </LinearLayout>
+
     </FrameLayout>
+
 </LinearLayout>

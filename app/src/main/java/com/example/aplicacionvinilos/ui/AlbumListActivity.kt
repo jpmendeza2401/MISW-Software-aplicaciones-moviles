@@ -13,6 +13,8 @@ import com.example.aplicacionvinilos.databinding.ActivityAlbumListBinding
 import com.example.aplicacionvinilos.ui.adapters.AlbumListAdapter
 import com.example.aplicacionvinilos.viewmodels.AlbumListViewModel
 import com.example.aplicacionvinilos.viewmodels.UiState
+import android.content.Intent
+import com.example.aplicacionvinilos.ui.AlbumDetailActivity
 
 // HU01: consultar el catálogo de álbumes. Es la pantalla de inicio de la app.
 class AlbumListActivity : AppCompatActivity() {
@@ -48,9 +50,9 @@ class AlbumListActivity : AppCompatActivity() {
     }
 
     private fun openAlbum(album: Album) {
-        // TODO (Jhon Angel, 20 %): abrir el detalle del álbum (HU02) cuando la rama
-        // feature/HU02 esté en dev. Algo como:
-        // startActivity(Intent(this, AlbumDetailActivity::class.java).putExtra("albumId", album.id))
-        // Revisar en AlbumDetailActivity el nombre exacto del extra que espera.
+        startActivity(
+            Intent(this, AlbumDetailActivity::class.java)
+                .putExtra(AlbumDetailActivity.EXTRA_ALBUM_ID, album.id)
+        )
     }
 }
