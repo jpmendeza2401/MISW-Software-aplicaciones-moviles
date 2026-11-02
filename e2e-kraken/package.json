@@ -1,0 +1,16 @@
+{
+  "name": "vinilos-e2e-kraken",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pruebas E2E con Kraken para la app Vinilos",
+  "scripts": {
+    "test": "kraken-node run",
+    "doctor": "kraken-node doctor"
+  },
+  "dependencies": {
+    "kraken-node": "*"
+  },
+  "devDependencies": {
+    "appium": "^1.22.3"
+  }
+}

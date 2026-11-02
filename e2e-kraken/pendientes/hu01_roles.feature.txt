@@ -1,0 +1,31 @@
+Feature: HU01 Consultar catálogo de álbumes
+  Como visitante quiero ver el catálogo de álbumes
+  para conocer los álbumes disponibles y abrir su detalle.
+
+  @user1 @mobile
+  Scenario: CA01.1 Ver el listado de álbumes
+    Given abro la aplicación
+    When espero a que cargue el listado de álbumes
+    Then veo al menos un álbum con nombre y artista
+
+  @user1 @mobile
+  Scenario: CA01.2 Ir al detalle de un álbum
+    Given abro la aplicación
+    When espero a que cargue el listado de álbumes
+    And toco el primer álbum de la lista
+    Then veo el detalle del álbum que toqué
+
+  # PENDIENTE (CA01.4): requiere la pantalla de inicio para elegir el rol y el botón
+  # «+» con id fab_create_album. Activar estos escenarios cuando existan en la app.
+  #
+  # @user1 @mobile
+  # Scenario: CA01.4 El visitante no ve el botón de crear álbum
+  #   Given entro a la aplicación como "visitante"
+  #   When espero a que cargue el listado de álbumes
+  #   Then no veo el elemento "fab_create_album"
+  #
+  # @user1 @mobile
+  # Scenario: CA01.4 El coleccionista ve el botón de crear álbum
+  #   Given entro a la aplicación como "coleccionista"
+  #   When espero a que cargue el listado de álbumes
+  #   Then veo el elemento "fab_create_album"
