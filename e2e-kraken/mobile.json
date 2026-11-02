@@ -1,0 +1,6 @@
+{
+  "type": "singular",
+  "apk_path": "../app/build/outputs/apk/remote/debug/app-remote-debug.apk",
+  "apk_package": "com.example.aplicacionvinilos",
+  "apk_launch_activity": "com.example.aplicacionvinilos.ui.AlbumListActivity"
+}
