@@ -39,4 +39,11 @@ class CollectorRepository(
 
         return message ?: "Error ${e.code()}"
     }
+    suspend fun getCollector(collectorId: Int): Result<Collector> {
+        return try {
+            Result.success(apiService.getCollector(collectorId))
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
 }

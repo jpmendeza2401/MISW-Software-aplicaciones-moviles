@@ -14,6 +14,7 @@ import com.example.aplicacionvinilos.databinding.ActivityCollectorListBinding
 import com.example.aplicacionvinilos.ui.adapters.CollectorAdapter
 import com.example.aplicacionvinilos.viewmodels.CollectorViewModel
 import com.example.aplicacionvinilos.viewmodels.UiState
+import com.example.aplicacionvinilos.ui.CollectorDetailActivity
 
 // HU05: consultar el listado de coleccionistas.
 class CollectorListActivity : AppCompatActivity() {
@@ -22,7 +23,9 @@ class CollectorListActivity : AppCompatActivity() {
 
     private val viewModel: CollectorViewModel by viewModels()
 
-    private val adapter = CollectorAdapter()
+    private val adapter = CollectorAdapter { collector ->
+        openCollectorDetail(collector)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -129,5 +132,18 @@ class CollectorListActivity : AppCompatActivity() {
                 state.message
             )
         }
+    }
+    private fun openCollectorDetail(collector: Collector) {
+        val intent = Intent(
+            this,
+            CollectorDetailActivity::class.java
+        ).apply {
+            putExtra(
+                CollectorDetailActivity.EXTRA_COLLECTOR_ID,
+                collector.id
+            )
+        }
+
+        startActivity(intent)
     }
 }
