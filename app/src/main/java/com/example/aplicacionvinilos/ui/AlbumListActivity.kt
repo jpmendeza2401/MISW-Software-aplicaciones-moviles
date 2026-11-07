@@ -37,6 +37,7 @@ class AlbumListActivity : AppCompatActivity() {
         binding.albumsList.adapter = adapter
         binding.retryButton.setOnClickListener { viewModel.loadAlbums() }
         viewModel.albums.observe(this) { render(it) }
+        setupBottomNavigation()
     }
 
     private fun render(state: UiState<List<Album>>) {
@@ -55,4 +56,28 @@ class AlbumListActivity : AppCompatActivity() {
                 .putExtra(AlbumDetailActivity.EXTRA_ALBUM_ID, album.id)
         )
     }
+
+
+    private fun setupBottomNavigation() {
+        binding.bottomNavigation.selectedItemId =
+            R.id.navigation_albums
+
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+
+                R.id.navigation_albums -> true
+
+                R.id.navigation_collectors -> {
+                    startActivity(
+                        Intent(this, CollectorListActivity::class.java)
+                    )
+                    finish()
+                    true
+                }
+
+                else -> false
+            }
+        }
+    }
+
 }
