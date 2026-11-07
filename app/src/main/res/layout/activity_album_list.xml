@@ -76,8 +76,20 @@
                 android:text="@string/reintentar"
                 android:textColor="#100F0D"
                 android:backgroundTint="#D8AD4A" />
+
         </LinearLayout>
 
     </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1C1A16"
+        app:menu="@menu/bottom_navigation_menu"
+        app:itemIconTint="#D8AD4A"
+        app:itemTextColor="#F5F0E6"
+        app:labelVisibilityMode="labeled"
+        app:elevation="8dp" />
 
 </LinearLayout>

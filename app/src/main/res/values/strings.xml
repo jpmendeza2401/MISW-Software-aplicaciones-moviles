@@ -17,4 +17,13 @@
     <string name="tracks_empty">Aún no hay tracks</string>
     <string name="comments_title">Comentarios</string>
     <string name="comments_empty">Aún no hay comentarios</string>
+    <string name="collector_name_placeholder">Nombre del coleccionista</string>
+    <string name="collector_id_placeholder">ID: 1</string>
+    <string name="collectors_title">Coleccionistas</string>
+    <string name="collectors_subtitle">Consulta los coleccionistas registrados.</string>
+    <string name="collectors_empty">No hay coleccionistas disponibles.</string>
+    <string name="collectors_error">No fue posible cargar los coleccionistas.</string>
+    <string name="retry">Reintentar</string>
+    <string name="collector_id_format">ID: %1$d</string>
+    <string name="coleccionistas">Coleccionistas</string>
 </resources>

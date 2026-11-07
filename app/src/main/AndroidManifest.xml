@@ -38,6 +38,11 @@
             android:exported="false"
             android:theme="@style/Theme.AplicacionVinilos.Groove" />
 
+        <!-- HU05: listado de coleccionistas -->
+        <activity
+            android:name=".ui.CollectorListActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
