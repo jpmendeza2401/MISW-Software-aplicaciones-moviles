@@ -20,7 +20,7 @@ class AlbumViewModel(
         viewModelScope.launch {
             repository.getAlbum(albumId)
                 .onSuccess { _album.value = UiState.Success(it) }
-                .onFailure { _album.value = UiState.Error(it.message.orEmpty()) }
+                .onFailure { _album.value = UiState.Error(it.message ?: "Error desconocido") }
         }
     }
 }
