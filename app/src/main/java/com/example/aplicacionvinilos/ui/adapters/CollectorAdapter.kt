@@ -1,3 +1,4 @@
+
 package com.example.aplicacionvinilos.ui.adapters
 
 import android.view.LayoutInflater
@@ -9,11 +10,11 @@ import com.example.aplicacionvinilos.R
 import com.example.aplicacionvinilos.data.model.Collector
 import com.example.aplicacionvinilos.databinding.ItemCollectorBinding
 
-// HU05: muestra el identificador y nombre de cada coleccionista.
-class CollectorAdapter :
-    ListAdapter<Collector, CollectorAdapter.CollectorViewHolder>(DIFF) {
+class CollectorAdapter(
+    private val onCollectorClick: (Collector) -> Unit
+) : ListAdapter<Collector, CollectorAdapter.CollectorViewHolder>(DIFF) {
 
-    class CollectorViewHolder(
+    inner class CollectorViewHolder(
         private val binding: ItemCollectorBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
@@ -25,6 +26,10 @@ class CollectorAdapter :
                     R.string.collector_id_format,
                     collector.id
                 )
+
+            binding.root.setOnClickListener {
+                onCollectorClick(collector)
+            }
         }
     }
 
@@ -32,7 +37,6 @@ class CollectorAdapter :
         parent: ViewGroup,
         viewType: Int
     ): CollectorViewHolder {
-
         val binding = ItemCollectorBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,

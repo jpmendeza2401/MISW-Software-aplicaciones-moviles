@@ -43,6 +43,10 @@
             android:name=".ui.CollectorListActivity"
             android:exported="false" />
 
+        <!-- HU06: detalle de coleccionistas -->
+        <activity
+            android:name=".ui.CollectorDetailActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
