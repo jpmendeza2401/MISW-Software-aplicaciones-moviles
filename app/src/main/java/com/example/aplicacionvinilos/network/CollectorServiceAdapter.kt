@@ -18,19 +18,27 @@ class CollectorServiceAdapter(
 
     // HU05: GET /collectors
     suspend fun getCollectors(): Result<List<Collector>> =
-        call { apiService.getCollectors() }
+        call(notFoundMessage = "No se encontró el listado de coleccionistas") {
+            apiService.getCollectors()
+        }
 
     // HU06: GET /collectors/{collectorId}
     suspend fun getCollector(collectorId: Int): Result<Collector> =
-        call { apiService.getCollector(collectorId) }
+        call(notFoundMessage = "El coleccionista no existe") {
+            apiService.getCollector(collectorId)
+        }
 
     // Un solo lugar con el try/catch: cada endpoint nuevo es una línea más arriba.
-    private suspend fun <T> call(request: suspend () -> T): Result<T> =
+    // notFoundMessage: el texto que verá el usuario si el backend responde 404 en ESTE endpoint.
+    private suspend fun <T> call(
+        notFoundMessage: String,
+        request: suspend () -> T
+    ): Result<T> =
         try {
             Result.success(request())
         } catch (e: HttpException) {
             traceError("HTTP ${e.code()}", e)
-            Result.failure(Exception(extractMessage(e)))
+            Result.failure(Exception(extractMessage(e, notFoundMessage)))
         } catch (e: IOException) {
             traceError("Fallo de red: ${e.message}", e)
             Result.failure(Exception("Sin conexión con el servidor"))
@@ -39,9 +47,9 @@ class CollectorServiceAdapter(
             Result.failure(Exception("Respuesta inválida del servidor"))
         }
 
-    // El backend responde 404 en inglés; lo traducimos porque ese caso sí lo verá el usuario.
-    private fun extractMessage(e: HttpException): String {
-        if (e.code() == HTTP_NOT_FOUND) return "El coleccionista no existe"
+    // El backend responde 404 en inglés; lo traducimos según el endpoint que falló.
+    private fun extractMessage(e: HttpException, notFoundMessage: String): String {
+        if (e.code() == HTTP_NOT_FOUND) return notFoundMessage
         val body = runCatching { e.response()?.errorBody()?.string() }.getOrNull()
         val message = runCatching {
             JsonParser.parseString(body).asJsonObject.get("message").asString
