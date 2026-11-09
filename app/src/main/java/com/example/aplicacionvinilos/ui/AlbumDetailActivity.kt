@@ -1,5 +1,6 @@
 package com.example.aplicacionvinilos.ui
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
+import com.example.aplicacionvinilos.R
 import com.example.aplicacionvinilos.data.model.Album
 import com.example.aplicacionvinilos.databinding.ActivityAlbumDetailBinding
 import com.example.aplicacionvinilos.ui.adapters.CommentAdapter
@@ -40,6 +42,7 @@ class AlbumDetailActivity : AppCompatActivity() {
         }
 
         binding.toolbar.setNavigationOnClickListener { finish() }
+        setupBottomNavigation()
         binding.tracksList.adapter = trackAdapter
         binding.commentsList.adapter = commentAdapter
         viewModel.album.observe(this) { render(it) }
@@ -50,6 +53,27 @@ class AlbumDetailActivity : AppCompatActivity() {
             return
         }
         if (savedInstanceState == null) viewModel.loadAlbum(albumId)
+    }
+
+    // El detalle pertenece a la sección «Álbumes», por eso esa pestaña queda marcada.
+    // selectedItemId se asigna ANTES de los listeners para que no dispare una navegación.
+    private fun setupBottomNavigation() {
+        binding.bottomNavigation.selectedItemId = R.id.navigation_albums
+
+        // Tocar «Álbumes» estando ya en esa sección es una "reselección":
+        // volvemos al listado cerrando el detalle.
+        binding.bottomNavigation.setOnItemReselectedListener { finish() }
+
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_collectors -> {
+                    startActivity(Intent(this, CollectorListActivity::class.java))
+                    finish()
+                    true
+                }
+                else -> false
+            }
+        }
     }
 
     private fun render(state: UiState<Album>) {
