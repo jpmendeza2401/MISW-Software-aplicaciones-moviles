@@ -120,6 +120,9 @@ class CollectorDetailActivity : AppCompatActivity() {
         binding.bottomNavigation.selectedItemId =
             R.id.navigation_collectors
 
+        // Tocar «Coleccionistas» estando en el detalle vuelve al listado.
+        binding.bottomNavigation.setOnItemReselectedListener { finish() }
+
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
 

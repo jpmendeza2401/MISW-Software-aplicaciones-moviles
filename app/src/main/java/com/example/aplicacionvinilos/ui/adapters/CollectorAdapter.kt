@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.aplicacionvinilos.R
 import com.example.aplicacionvinilos.data.model.Collector
 import com.example.aplicacionvinilos.databinding.ItemCollectorBinding
+import com.example.aplicacionvinilos.ui.getCollectorInitials
 
 class CollectorAdapter(
     private val onCollectorClick: (Collector) -> Unit
@@ -19,13 +20,25 @@ class CollectorAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(collector: Collector) {
-            binding.collectorName.text = collector.name
+            val resources = binding.root.resources
 
-            binding.collectorId.text =
-                binding.root.context.getString(
-                    R.string.collector_id_format,
-                    collector.id
-                )
+            binding.collectorName.text = collector.name
+            binding.collectorInitials.text = getCollectorInitials(collector.name)
+
+            // getQuantityString elige singular o plural según el número
+            // (1 álbum / 3 álbumes). Ver <plurals> en strings.xml.
+            val albums = resources.getQuantityString(
+                R.plurals.collector_albums_count,
+                collector.collectorAlbums.size,
+                collector.collectorAlbums.size
+            )
+            val artists = resources.getQuantityString(
+                R.plurals.collector_artists_count,
+                collector.favoritePerformers.size,
+                collector.favoritePerformers.size
+            )
+            binding.collectorStats.text =
+                resources.getString(R.string.collector_stats_format, albums, artists)
 
             binding.root.setOnClickListener {
                 onCollectorClick(collector)

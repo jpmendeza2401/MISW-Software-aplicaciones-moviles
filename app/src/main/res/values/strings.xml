@@ -26,4 +26,17 @@
     <string name="retry">Reintentar</string>
     <string name="collector_id_format">ID: %1$d</string>
     <string name="coleccionistas">Coleccionistas</string>
+
+    <!-- HU05: resumen de cada tarjeta del listado, p. ej. «3 álbumes · 1 artista favorito» -->
+    <string name="collector_stats_format">%1$s · %2$s</string>
+    <plurals name="collector_albums_count">
+        <item quantity="one">%d álbum</item>
+        <item quantity="many">%d álbumes</item>
+        <item quantity="other">%d álbumes</item>
+    </plurals>
+    <plurals name="collector_artists_count">
+        <item quantity="one">%d artista favorito</item>
+        <item quantity="many">%d artistas favoritos</item>
+        <item quantity="other">%d artistas favoritos</item>
+    </plurals>
 </resources>

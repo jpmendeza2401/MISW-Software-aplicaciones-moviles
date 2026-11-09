@@ -1,38 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<!-- HU05: tarjeta de un coleccionista en el listado.
+     Usa la misma tarjeta oscura de item_album y el vinilo con iniciales del detalle (HU06),
+     para que listado y detalle se sientan parte de la misma app. -->
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="12dp"
-    android:layout_marginVertical="6dp"
+    android:layout_margin="6dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="#1B1A17"
     app:cardCornerRadius="10dp"
-    app:cardElevation="3dp">
+    app:cardElevation="2dp"
+    app:strokeColor="#49402B"
+    app:strokeWidth="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
 
-        <TextView
-            android:id="@+id/collectorName"
-            android:layout_width="match_parent"
+        <!-- Mini vinilo con las iniciales en la etiqueta central -->
+        <FrameLayout
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/vinyl_record_small">
+
+            <TextView
+                android:id="@+id/collectorInitials"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:background="@drawable/vinyl_label_small"
+                android:gravity="center"
+                android:importantForAccessibility="no"
+                android:textColor="#100F0D"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                tools:text="MB" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/collector_name_placeholder"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:layout_marginStart="14dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/collectorName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/manrope"
+                android:maxLines="1"
+                android:textColor="#F5F0E6"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="Manolo Bellon" />
+
+            <TextView
+                android:id="@+id/collectorStats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/manrope"
+                android:maxLines="1"
+                android:textColor="#BDB7A8"
+                android:textSize="13sp"
+                tools:text="3 álbumes · 2 artistas favoritos" />
+        </LinearLayout>
+
+        <!-- Indica que la tarjeta abre el detalle -->
+        <TextView
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:importantForAccessibility="no"
+            android:text="›"
+            android:textColor="#D8AD4A"
+            android:textSize="28sp"
             android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/collectorId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="@string/collector_id_placeholder"
-            android:textColor="#757575"
-            android:textSize="14sp" />
-
     </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
