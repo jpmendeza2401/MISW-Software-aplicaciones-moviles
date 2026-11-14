@@ -23,9 +23,21 @@ class AlbumListAdapter(
             binding.albumName.text = album.name
             binding.albumArtist.text = album.performers.joinToString(", ") { it.name }
                 .ifEmpty { context.getString(R.string.sin_artista) }
-            Glide.with(binding.albumCover).load(album.cover).centerCrop().into(binding.albumCover)
+            val px = (COVER_DP * binding.root.resources.displayMetrics.density).toInt()
+            Glide.with(binding.albumCover)
+                .load(album.cover)
+                .override(px, px)
+                .centerCrop()
+                .into(binding.albumCover)
             binding.root.setOnClickListener { onAlbumClick(album) }
         }
+
+        fun clear() = Glide.with(binding.albumCover).clear(binding.albumCover)
+    }
+
+    // Libera el bitmap de la celda reciclada (menos memoria al hacer scroll).
+    override fun onViewRecycled(holder: AlbumViewHolder) {
+        holder.clear()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumViewHolder {
@@ -38,6 +50,7 @@ class AlbumListAdapter(
     }
 
     companion object {
+        private const val COVER_DP = 64
         private val DIFF = object : DiffUtil.ItemCallback<Album>() {
             override fun areItemsTheSame(old: Album, new: Album) = old.id == new.id
             override fun areContentsTheSame(old: Album, new: Album) = old == new
