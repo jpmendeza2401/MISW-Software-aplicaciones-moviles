@@ -1,8 +1,6 @@
 package com.example.aplicacionvinilos.ui
 
-import android.app.Activity
 import android.content.Intent
-import com.example.aplicacionvinilos.data.session.CollectorSession
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -58,7 +56,7 @@ class LoginActivity : AppCompatActivity() {
 
     // Visitante: no pide datos ni llama al backend; CollectorSession queda vacía (current == null).
     private fun enterAsGuest() {
-        CollectorSession.clear()
+        viewModel.enterAsGuest()
         goToHome()
     }
 
@@ -86,18 +84,6 @@ class LoginActivity : AppCompatActivity() {
                 goToHome()
             }
             else -> Unit
-        }
-    }
-
-    companion object {
-        // Cerrar sesión: vacía CollectorSession y vuelve al login borrando el back stack.
-        fun logout(activity: Activity) {
-            CollectorSession.clear()
-            activity.startActivity(
-                Intent(activity, LoginActivity::class.java)
-                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            )
-            activity.finish()
         }
     }
 }

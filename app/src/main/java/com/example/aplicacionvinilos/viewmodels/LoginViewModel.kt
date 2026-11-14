@@ -39,6 +39,9 @@ class LoginViewModel(
         }
     }
 
+    // Visitante: no consulta el backend y deja la sesión vacía.
+    fun enterAsGuest() = repository.logout()
+
     fun onEmailChanged() {
         if (_emailError.value != null) _emailError.value = null
     }
