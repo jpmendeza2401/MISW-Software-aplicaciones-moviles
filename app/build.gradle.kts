@@ -47,11 +47,22 @@ android {
 
     buildTypes {
         release {
+            isShrinkResources = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             optimization {
                 enable = true
                 packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
             }
         }
+    }
+    lint {
+        abortOnError = false
+        checkDependencies = true
+        htmlReport = true
+        xmlReport = true
+    }
+    testOptions {
+        unitTests.isReturnDefaultValues = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -60,7 +71,6 @@ android {
     buildFeatures {
         buildConfig = true
         viewBinding = true
-        dataBinding = true
     }
 }
 
@@ -73,13 +83,12 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
     implementation(libs.gson)
-    implementation(libs.okhttp.logging)
-    implementation(libs.volley)
+    implementation(libs.okhttp)
     implementation(libs.glide)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.fragment.ktx)
     implementation(libs.kotlinx.coroutines.android)
+    debugImplementation(libs.leakcanary)
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.androidx.arch.core.testing)
