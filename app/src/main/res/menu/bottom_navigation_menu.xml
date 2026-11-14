@@ -11,4 +11,9 @@
         android:icon="@android:drawable/ic_menu_myplaces"
         android:title="@string/coleccionistas" />
 
+    <item
+        android:id="@+id/navigation_logout"
+        android:icon="@android:drawable/ic_lock_power_off"
+        android:title="@string/cerrar_sesion" />
+
 </menu>

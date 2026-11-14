@@ -36,6 +36,12 @@ class FakeApiService(private val block: suspend () -> List<Album>) : ApiService 
         throw UnsupportedOperationException("No se usa en HU01")
 
     override suspend fun getAlbums(): List<Album> = block()
+
+    override suspend fun getCollectors(): List<com.example.aplicacionvinilos.data.model.Collector> =
+        throw UnsupportedOperationException()
+
+    override suspend fun getCollector(collectorId: Int): com.example.aplicacionvinilos.data.model.Collector =
+        throw UnsupportedOperationException()
 }
 
 /** Fake de AlbumService (HU02). */
