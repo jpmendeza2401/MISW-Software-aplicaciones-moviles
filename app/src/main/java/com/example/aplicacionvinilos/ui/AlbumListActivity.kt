@@ -76,7 +76,7 @@ class AlbumListActivity : AppCompatActivity() {
                 }
 
                 R.id.navigation_logout -> {
-                    LoginActivity.logout(this)
+                    logout()
                     true
                 }
 

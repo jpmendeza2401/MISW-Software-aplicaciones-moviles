@@ -1,32 +1,17 @@
 package com.example.aplicacionvinilos.data.repository
 
-import android.util.Log
 import com.example.aplicacionvinilos.data.model.Band
+import com.example.aplicacionvinilos.network.AlbumBandServiceAdapter
 import com.example.aplicacionvinilos.network.ApiService
-import com.example.aplicacionvinilos.network.RetrofitClient
-import com.google.gson.JsonParser
-import java.io.IOException
-import retrofit2.HttpException
 
+// Única fuente de datos de bandas por álbum; delega el acceso remoto en el adapter.
 class AlbumBandRepository(
-    private val apiService: ApiService = RetrofitClient.apiService
+    private val adapter: AlbumBandServiceAdapter = AlbumBandServiceAdapter()
 ) {
 
-    suspend fun getAlbumBand(albumId: Int, bandId: Int): Result<Band> =
-        try {
-            Result.success(apiService.getAlbumBand(albumId, bandId))
-        } catch (e: HttpException) {
-            Result.failure(Exception(extractMessage(e)))
-        } catch (e: IOException) {
-            Log.e("AlbumBandRepository", "Fallo de red: ${e::class.java.name}: ${e.message}", e)
-            Result.failure(Exception("Sin conexión con el servidor"))
-        }
+    // Permite inyectar un ApiService falso en pruebas.
+    constructor(apiService: ApiService) : this(AlbumBandServiceAdapter(apiService))
 
-    private fun extractMessage(e: HttpException): String {
-        val body = e.response()?.errorBody()?.string()
-        val message = runCatching {
-            JsonParser.parseString(body).asJsonObject.get("message").asString
-        }.getOrNull()
-        return message ?: "Error ${e.code()}"
-    }
+    suspend fun getAlbumBand(albumId: Int, bandId: Int): Result<Band> =
+        adapter.getAlbumBand(albumId, bandId)
 }
