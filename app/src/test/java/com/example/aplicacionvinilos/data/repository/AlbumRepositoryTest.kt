@@ -52,4 +52,33 @@ class AlbumRepositoryTest {
         val result = AlbumRepository(FakeAlbumService { throw JsonParseException("malo") }).getAlbum(1)
         assertEquals("Respuesta inválida del servidor", result.exceptionOrNull()?.message)
     }
+
+    // HU09: POST /albums/{albumId}/comments
+    @Test
+    fun `addComment envia descripcion, rating y collector id`() = runTest {
+        val service = FakeAlbumService { album(it) }
+
+        val result = AlbumRepository(service).addComment(5, "Muy bueno", 4, collectorId = 2)
+
+        assertTrue(result.isSuccess)
+        assertEquals(5, service.postedAlbumId)
+        assertEquals("Muy bueno", service.postedComment?.description)
+        assertEquals(4, service.postedComment?.rating)
+        assertEquals(2, service.postedComment?.collector?.id)
+    }
+
+    @Test
+    fun `addComment con error HTTP devuelve el mensaje del backend`() = runTest {
+        val error = HttpException(
+            Response.error<Any>(
+                412,
+                """{"message":"Rating must be between 1 and 5"}""".toResponseBody("application/json".toMediaType())
+            )
+        )
+        val service = FakeAlbumService(onComment = { _, _ -> throw error }) { album(it) }
+
+        val result = AlbumRepository(service).addComment(5, "x", 9, collectorId = 2)
+
+        assertEquals("Rating must be between 1 and 5", result.exceptionOrNull()?.message)
+    }
 }

@@ -4,6 +4,9 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
+import androidx.core.widget.doAfterTextChanged
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -13,10 +16,13 @@ import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 import com.example.aplicacionvinilos.R
 import com.example.aplicacionvinilos.data.model.Album
+import com.example.aplicacionvinilos.data.model.Comment
+import com.example.aplicacionvinilos.data.session.CollectorSession
 import com.example.aplicacionvinilos.databinding.ActivityAlbumDetailBinding
 import com.example.aplicacionvinilos.ui.adapters.CommentAdapter
 import com.example.aplicacionvinilos.ui.adapters.TrackAdapter
 import com.example.aplicacionvinilos.viewmodels.AlbumViewModel
+import com.example.aplicacionvinilos.viewmodels.CommentValidator
 import com.example.aplicacionvinilos.viewmodels.UiState
 
 class AlbumDetailActivity : AppCompatActivity() {
@@ -26,6 +32,7 @@ class AlbumDetailActivity : AppCompatActivity() {
 
     private val trackAdapter = TrackAdapter()
     private val commentAdapter = CommentAdapter()
+    private var albumId = INVALID_ID
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +43,10 @@ class AlbumDetailActivity : AppCompatActivity() {
         binding = ActivityAlbumDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            // HU09: se suma el teclado (ime) para que el cuadro de comentario no quede oculto.
+            val systemBars = insets.getInsets(
+                WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.ime()
+            )
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
@@ -46,8 +56,9 @@ class AlbumDetailActivity : AppCompatActivity() {
         binding.tracksList.adapter = trackAdapter
         binding.commentsList.adapter = commentAdapter
         viewModel.album.observe(this) { render(it) }
+        setupAddCommentSection()
 
-        val albumId = intent.getIntExtra(EXTRA_ALBUM_ID, INVALID_ID)
+        albumId = intent.getIntExtra(EXTRA_ALBUM_ID, INVALID_ID)
         if (albumId == INVALID_ID) {
             binding.errorText.visibility = View.VISIBLE
             return
@@ -79,6 +90,109 @@ class AlbumDetailActivity : AppCompatActivity() {
                 else -> false
             }
         }
+    }
+
+    // HU09: la sección para comentar solo existe si hay un coleccionista en sesión
+    // (CollectorSession.current?.id_usuario tiene valor). Para el invitado queda oculta.
+    private fun setupAddCommentSection() {
+        val user = CollectorSession.current
+        if (user == null) {
+            binding.addCommentSection.visibility = View.GONE
+            return
+        }
+        binding.addCommentSection.visibility = View.VISIBLE
+        binding.commentAuthorText.text =
+            getString(R.string.add_comment_author, user.name)
+
+        updateRatingValue(binding.commentRatingBar.rating.toInt())
+        binding.commentRatingBar.setOnRatingBarChangeListener { bar, rating, fromUser ->
+            // La escala es estricta de 1 a 5: no se permite dejar 0 estrellas.
+            if (fromUser && rating < CommentValidator.MIN_RATING) {
+                bar.rating = CommentValidator.MIN_RATING.toFloat()
+            }
+            updateRatingValue(bar.rating.toInt())
+        }
+
+        updateCounter(0)
+        binding.commentDescriptionInput.doAfterTextChanged {
+            updateCounter(it?.length ?: 0)
+            binding.commentErrorText.visibility = View.GONE
+        }
+
+        binding.publishCommentButton.setOnClickListener {
+            hideKeyboard()
+            viewModel.publishComment(
+                albumId = albumId,
+                description = binding.commentDescriptionInput.text.toString(),
+                rating = binding.commentRatingBar.rating.toInt(),
+                collectorId = CollectorSession.current?.id_usuario
+            )
+        }
+        binding.cancelCommentButton.setOnClickListener {
+            hideKeyboard()
+            resetCommentForm()
+        }
+
+        viewModel.validationError.observe(this) { showValidationError(it) }
+        viewModel.commentState.observe(this) { renderCommentState(it) }
+    }
+
+    private fun renderCommentState(state: UiState<Comment>) {
+        val loading = state is UiState.Loading
+        binding.publishCommentButton.isEnabled = !loading
+        binding.cancelCommentButton.isEnabled = !loading
+        binding.commentDescriptionInput.isEnabled = !loading
+        binding.commentRatingBar.isEnabled = !loading
+        binding.publishCommentButton.setText(
+            if (loading) R.string.add_comment_publishing else R.string.add_comment_publish
+        )
+        when (state) {
+            is UiState.Success -> {
+                Toast.makeText(this, R.string.add_comment_success, Toast.LENGTH_SHORT).show()
+                resetCommentForm()
+            }
+            is UiState.Error -> {
+                binding.commentErrorText.text = getString(R.string.add_comment_error, state.message)
+                binding.commentErrorText.visibility = View.VISIBLE
+            }
+            else -> Unit
+        }
+    }
+
+    private fun showValidationError(error: CommentValidator.Error?) {
+        if (error == null) {
+            binding.commentErrorText.visibility = View.GONE
+            return
+        }
+        binding.commentErrorText.text = when (error) {
+            CommentValidator.Error.EMPTY_DESCRIPTION -> getString(R.string.add_comment_error_empty)
+            CommentValidator.Error.DESCRIPTION_TOO_LONG ->
+                getString(R.string.add_comment_error_too_long, CommentValidator.MAX_DESCRIPTION_LENGTH)
+            CommentValidator.Error.INVALID_RATING -> getString(R.string.add_comment_error_rating)
+        }
+        binding.commentErrorText.visibility = View.VISIBLE
+    }
+
+    private fun resetCommentForm() {
+        binding.commentDescriptionInput.text?.clear()
+        binding.commentDescriptionInput.clearFocus()
+        binding.commentRatingBar.rating = CommentValidator.MAX_RATING.toFloat()
+        binding.commentErrorText.visibility = View.GONE
+        viewModel.clearCommentForm()
+    }
+
+    private fun updateRatingValue(rating: Int) {
+        binding.commentRatingValue.text = getString(R.string.add_comment_rating_value, rating)
+    }
+
+    private fun updateCounter(length: Int) {
+        binding.commentCounterText.text =
+            getString(R.string.add_comment_counter, length, CommentValidator.MAX_DESCRIPTION_LENGTH)
+    }
+
+    private fun hideKeyboard() {
+        val imm = getSystemService(InputMethodManager::class.java)
+        imm?.hideSoftInputFromWindow(binding.commentDescriptionInput.windowToken, 0)
     }
 
     private fun render(state: UiState<Album>) {

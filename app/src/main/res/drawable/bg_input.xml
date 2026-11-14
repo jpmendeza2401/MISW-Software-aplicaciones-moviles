@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- HU09: fondo del cuadro de texto del comentario -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true">
+        <shape>
+            <solid android:color="@color/groove_deck" />
+            <stroke android:width="1dp" android:color="@color/groove_primary" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="@color/groove_deck" />
+            <stroke android:width="1dp" android:color="@color/groove_card_border" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+</selector>
