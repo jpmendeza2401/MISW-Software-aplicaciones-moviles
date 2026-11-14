@@ -72,7 +72,7 @@ class AlbumDetailActivity : AppCompatActivity() {
                     true
                 }
                 R.id.navigation_logout -> {
-                    LoginActivity.logout(this)
+                    logout()
                     true
                 }
 
