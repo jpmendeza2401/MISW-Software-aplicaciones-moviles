@@ -32,6 +32,13 @@ class FavoritePerformerAdapter :
                 .centerCrop()
                 .into(binding.performerImage)
         }
+
+        fun clear() = Glide.with(binding.performerImage).clear(binding.performerImage)
+    }
+
+    // Libera el bitmap de la celda reciclada (menos memoria al hacer scroll).
+    override fun onViewRecycled(holder: PerformerViewHolder) {
+        holder.clear()
     }
 
     override fun onCreateViewHolder(

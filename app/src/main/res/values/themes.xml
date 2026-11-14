@@ -23,21 +23,21 @@
         <item name="android:fontFamily">@font/playfair_display</item>
         <item name="android:textColor">@color/groove_text_primary</item>
         <item name="android:textSize">26sp</item>
-        <item name="android:textFontWeight">700</item>
+        <item name="android:textFontWeight" tools:targetApi="28">700</item>
     </style>
 
     <style name="Groove.Text.Section" parent="@android:style/TextAppearance.Material">
         <item name="android:fontFamily">@font/playfair_display</item>
         <item name="android:textColor">@color/groove_text_primary</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:textFontWeight">600</item>
+        <item name="android:textFontWeight" tools:targetApi="28">600</item>
     </style>
 
     <style name="Groove.Text.Title" parent="@android:style/TextAppearance.Material">
         <item name="android:fontFamily">@font/manrope</item>
         <item name="android:textColor">@color/groove_text_primary</item>
         <item name="android:textSize">15sp</item>
-        <item name="android:textFontWeight">600</item>
+        <item name="android:textFontWeight" tools:targetApi="28">600</item>
     </style>
 
     <style name="Groove.Text.Body" parent="@android:style/TextAppearance.Material">
