@@ -9,7 +9,7 @@ Usar el build `remoteRelease` o `localDebug` siempre igual en ambas mediciones.
 | # | Modelo | Android | RAM | Gama |
 |---|--------|---------|-----|------|
 | 1 |        |         |     |      |
-| 2 |        |         |     |      |
+| 2 | NAA-LX3 | 15 | 3,7 GB (4 GB nominal) | Media-baja |
 | 3 |        |         |     |      |
 
 ## Resultados (rellenar por dispositivo y por flujo)
@@ -22,6 +22,7 @@ Flujos: Login/Invitado · HU01 listado de álbumes · HU02 detalle de álbum · 
 | 1 | HU01 | después | | | | | | |
 | 2 | HU01 | antes | | | | | | |
 | 2 | HU01 | después | | | | | | |
+| 2 | Recorrido completo (Login → HU01 → HU02 → HU09 → HU05 → HU06 → Cerrar sesión) | después | 2200 | 9,1 | 15,2 | 111,6 | 3,54 | pendiente |
 | 3 | HU01 | antes | | | | | | |
 | 3 | HU01 | después | | | | | | |
 
