@@ -144,6 +144,11 @@ class CollectorDetailActivity : AppCompatActivity() {
                     true
                 }
 
+                R.id.navigation_logout -> {
+                    LoginActivity.logout(this)
+                    true
+                }
+
                 else -> false
             }
         }

@@ -39,4 +39,22 @@
         <item quantity="many">%d artistas favoritos</item>
         <item quantity="other">%d artistas favoritos</item>
     </plurals>
+
+    <!-- Login simulado -->
+    <string name="login_titulo">Iniciar sesión</string>
+    <string name="login_email_hint">Correo electrónico</string>
+    <string name="login_boton">Entrar como Coleccionista</string>
+    <string name="login_email_vacio">Ingresa tu correo</string>
+    <string name="login_email_invalido">Ingresa un correo válido, p. ej. nombre@dominio.com</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="login_visitante">Entrar como Invitado</string>
+    <string name="login_marca">Groove</string>
+    <string name="login_badge">FONOTECA ANALÓGICA</string>
+    <string name="login_descripcion">Club &amp; Archivo de Coleccionistas de Vinilo de Alta Fidelidad</string>
+    <string name="login_label_correo">CORREO ELECTRÓNICO</string>
+    <string name="login_sin_clave">acceso sin clave</string>
+    <string name="login_email_placeholder">ejemplo@dominio.com</string>
+    <string name="login_info">Sin contraseñas complicadas. Ingresa el correo de tu cuenta de coleccionista o continúa como invitado para explorar prensajes y rarezas.</string>
+    <string name="login_footer_rpm">MASTER 33 ⅓ RPM · 180G</string>
+    <string name="login_footer_copy">Groove Audiophile Vinyl Archive © Edición Limitada</string>
 </resources>

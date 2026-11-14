@@ -14,10 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplicacionVinilos">
 
-        <!-- HU01: listado de álbumes, pantalla de inicio -->
+        <!-- Login simulado: pantalla de inicio -->
         <activity
-            android:name=".ui.AlbumListActivity"
-            android:exported="true">
+            android:name=".ui.LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AplicacionVinilos.Groove"
+            android:windowSoftInputMode="adjustResize">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +27,11 @@
             </intent-filter>
 
         </activity>
+
+        <!-- HU01: listado de álbumes -->
+        <activity
+            android:name=".ui.AlbumListActivity"
+            android:exported="false" />
 
         <!-- Actividad principal del ejemplo de HU01 -->
         <activity
