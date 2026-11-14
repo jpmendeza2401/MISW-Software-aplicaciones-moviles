@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- HU09: publicar comentario -->
+    <string name="add_comment_title">Deja tu comentario</string>
+    <string name="add_comment_author">Publicando como %1$s</string>
+    <string name="add_comment_rating_label">Calificación *</string>
+    <string name="add_comment_rating_hint">Escala de 1 a 5 estrellas.</string>
+    <string name="add_comment_rating_value">%1$d.0</string>
+    <string name="add_comment_description_label">Descripción del comentario *</string>
+    <string name="add_comment_counter">%1$d / %2$d</string>
+    <string name="add_comment_description_hint">Escribe tu opinión sobre el sonido, la calidad de la grabación o tu experiencia con este álbum…</string>
+    <string name="add_comment_publish">Publicar comentario</string>
+    <string name="add_comment_publishing">Publicando…</string>
+    <string name="add_comment_cancel">Cancelar</string>
+    <string name="add_comment_success">Comentario publicado</string>
+    <string name="add_comment_error">No fue posible publicar el comentario: %1$s</string>
+    <string name="add_comment_error_empty">Escribe la descripción del comentario.</string>
+    <string name="add_comment_error_too_long">La descripción no puede superar %1$d caracteres.</string>
+    <string name="add_comment_error_rating">Selecciona una calificación entre 1 y 5 estrellas.</string>
+
+</resources>
