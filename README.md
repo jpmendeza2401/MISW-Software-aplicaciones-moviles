@@ -1,3 +1,4 @@
+ 
 # MISW - Aplicaciones Móviles
 
 Aplicación móvil desarrollada como parte del curso **Desarrollo de Software para Aplicaciones Móviles (MISW)** de la Universidad de los Andes.
@@ -7,7 +8,7 @@ Aplicación móvil desarrollada como parte del curso **Desarrollo de Software pa
 Para instalar y ejecutar la aplicación se necesita:
 
 - Un dispositivo Android compatible.
-- El archivo APK generado por el proyecto.
+- El archivo APK incluido en el repositorio.
 - Espacio de almacenamiento disponible.
 - Permitir temporalmente la instalación de aplicaciones desde fuentes desconocidas, si Android lo solicita.
 
@@ -15,16 +16,19 @@ Para instalar y ejecutar la aplicación se necesita:
 
 ### 1. Descargar el APK
 
-Descarga el archivo APK desde la sección de entregables o desde el enlace de descarga compartido por el equipo.
+1. Ingresa al repositorio del proyecto.
+2. Accede a la carpeta `release`.
+3. Selecciona el archivo `app-debug.apk`.
+4. Haz clic en **Download** para descargarlo en tu dispositivo o computador.
 
-### 2. Transferir el archivo
+### 2. Transferir el archivo (si aplica)
 
 Si descargaste el APK desde un computador, transfiérelo al dispositivo Android mediante USB, Google Drive u otro medio disponible.
 
 ### 3. Instalar el APK
 
 1. Abre el administrador de archivos del dispositivo.
-2. Ubica el archivo `.apk`.
+2. Ubica el archivo `AplicacionVinilos.apk`.
 3. Selecciónalo para iniciar la instalación.
 4. Si Android muestra una advertencia de seguridad, autoriza la instalación desde esa fuente.
 5. Presiona **Instalar** y espera a que finalice el proceso.
@@ -45,6 +49,8 @@ Una vez instalada, selecciona **Abrir** o busca el icono de la aplicación en el
 MISW-Software-aplicaciones-moviles/
 ├── app/
 ├── gradle/
+├── releases/
+│   └── app-debug.apk
 ├── build.gradle.kts
 ├── settings.gradle.kts
 ├── gradle.properties
