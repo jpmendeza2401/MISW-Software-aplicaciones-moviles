@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Videos de evidencias E2E: pesan decenas de MB; se publican en una carpeta externa
+docs/pruebas/**/videos/
+
+# Videos de demostración para la wiki (se suben a la wiki o a la nube)
+docs/videos-wiki/

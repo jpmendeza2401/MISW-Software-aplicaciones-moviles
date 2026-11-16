@@ -1,0 +1,728 @@
+{
+  "resumen": {
+    "fecha": "15 de noviembre de 2026 a las 9:05 p. m.",
+    "dispositivo": {
+      "id": "AXSTBB6319102955",
+      "modelo": "NAA-LX3",
+      "android": "15",
+      "api": "35",
+      "tipo": "Dispositivo físico"
+    },
+    "rama": "feature/e2e-kraken-iteracion2",
+    "commit": "db471f9",
+    "cambiosSinConfirmar": true,
+    "apk": "remoteDebug",
+    "total": 14,
+    "pasaron": 14,
+    "fallaron": 0,
+    "noEjecutados": 0,
+    "duracionTotalSeg": 317.5,
+    "codigoSalidaKraken": 0,
+    "inicioMs": 1794794716451,
+    "videosUrl": ""
+  },
+  "escenarios": [
+    {
+      "archivo": "hu01_ca01_1_ver_listado.feature",
+      "hu": "HU01",
+      "titulo": "HU01 Consultar catálogo de álbumes",
+      "nombre": "CA01.1 Ver el listado de álbumes",
+      "estado": "pasó",
+      "duracion": 17347000000,
+      "pasos": [
+        {
+          "texto": "Given abro la aplicación",
+          "estado": "passed",
+          "duracion": 1448000000,
+          "error": ""
+        },
+        {
+          "texto": "When espero a que cargue el listado de álbumes",
+          "estado": "passed",
+          "duracion": 1914000000,
+          "error": ""
+        },
+        {
+          "texto": "Then veo al menos un álbum con nombre y artista",
+          "estado": "passed",
+          "duracion": 819000000,
+          "error": ""
+        }
+      ],
+      "video": "videos/HU01/hu01_ca01_1_ver_listado.mp4",
+      "captura": "capturas/HU01/hu01_ca01_1_ver_listado.png"
+    },
+    {
+      "archivo": "hu01_ca01_2_ir_al_detalle.feature",
+      "hu": "HU01",
+      "titulo": "HU01 Consultar catálogo de álbumes",
+      "nombre": "CA01.2 Ir al detalle de un álbum",
+      "estado": "pasó",
+      "duracion": 18576000000,
+      "pasos": [
+        {
+          "texto": "Given abro la aplicación",
+          "estado": "passed",
+          "duracion": 1239000000,
+          "error": ""
+        },
+        {
+          "texto": "When espero a que cargue el listado de álbumes",
+          "estado": "passed",
+          "duracion": 1984000000,
+          "error": ""
+        },
+        {
+          "texto": "And toco el primer álbum de la lista",
+          "estado": "passed",
+          "duracion": 883000000,
+          "error": ""
+        },
+        {
+          "texto": "Then veo el detalle del álbum que toqué",
+          "estado": "passed",
+          "duracion": 1247000000,
+          "error": ""
+        }
+      ],
+      "video": "videos/HU01/hu01_ca01_2_ir_al_detalle.mp4",
+      "captura": "capturas/HU01/hu01_ca01_2_ir_al_detalle.png"
+    },
+    {
+      "archivo": "hu02_ca02_1_informacion.feature",
+      "hu": "HU02",
+      "titulo": "HU02 Consultar la información detallada de un álbum",
+      "nombre": "CA02.1 Ver la información del álbum",
+      "estado": "pasó",
+      "duracion": 21049000000,
+      "pasos": [
+        {
+          "texto": "Given abro la aplicación",
+          "estado": "passed",
+          "duracion": 1243000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de álbumes",
+          "estado": "passed",
+          "duracion": 2215000000,
+          "error": ""
+        },
+        {
+          "texto": "When toco el primer álbum de la lista",
+          "estado": "passed",
+          "duracion": 895000000,
+          "error": ""
+        },
+        {
+          "texto": "Then veo el detalle del álbum que toqué",
+          "estado": "passed",
+          "duracion": 1236000000,
+          "error": ""
+        },
+        {
+          "texto": "And veo el año de lanzamiento con cuatro dígitos",
+          "estado": "passed",
+          "duracion": 718000000,
+          "error": ""
+        },
+        {
+          "texto": "And veo el género y el sello discográfico",
+          "estado": "passed",
+          "duracion": 821000000,
+          "error": ""
+        },
+        {
+          "texto": "And veo la descripción del álbum",
+          "estado": "passed",
+          "duracion": 747000000,
+          "error": ""
+        }
+      ],
+      "video": "videos/HU02/hu02_ca02_1_informacion.mp4",
+      "captura": "capturas/HU02/hu02_ca02_1_informacion.png"
+    },
+    {
+      "archivo": "hu02_ca02_2_tracks.feature",
+      "hu": "HU02",
+      "titulo": "HU02 Consultar la información detallada de un álbum",
+      "nombre": "CA02.2 Ver los tracks del álbum",
+      "estado": "pasó",
+      "duracion": 19641000000,
+      "pasos": [
+        {
+          "texto": "Given abro la aplicación",
+          "estado": "passed",
+          "duracion": 1275000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de álbumes",
+          "estado": "passed",
+          "duracion": 1891000000,
+          "error": ""
+        },
+        {
+          "texto": "When toco el primer álbum de la lista",
+          "estado": "passed",
+          "duracion": 910000000,
+          "error": ""
+        },
+        {
+          "texto": "Then veo el detalle del álbum que toqué",
+          "estado": "passed",
+          "duracion": 1216000000,
+          "error": ""
+        },
+        {
+          "texto": "And veo la sección \"Tracks\" con nombre y duración de cada track",
+          "estado": "passed",
+          "duracion": 1206000000,
+          "error": ""
+        }
+      ],
+      "video": "videos/HU02/hu02_ca02_2_tracks.mp4",
+      "captura": "capturas/HU02/hu02_ca02_2_tracks.png"
+    },
+    {
+      "archivo": "hu02_ca02_3_comentarios.feature",
+      "hu": "HU02",
+      "titulo": "HU02 Consultar la información detallada de un álbum",
+      "nombre": "CA02.3 Ver los comentarios del álbum",
+      "estado": "pasó",
+      "duracion": 22776000000,
+      "pasos": [
+        {
+          "texto": "Given abro la aplicación",
+          "estado": "passed",
+          "duracion": 1214000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de álbumes",
+          "estado": "passed",
+          "duracion": 1946000000,
+          "error": ""
+        },
+        {
+          "texto": "When toco el primer álbum de la lista",
+          "estado": "passed",
+          "duracion": 1453000000,
+          "error": ""
+        },
+        {
+          "texto": "Then veo el detalle del álbum que toqué",
+          "estado": "passed",
+          "duracion": 1228000000,
+          "error": ""
+        },
+        {
+          "texto": "And veo la sección \"Comentarios\" con estrellas y texto de cada comentario",
+          "estado": "passed",
+          "duracion": 3748000000,
+          "error": ""
+        }
+      ],
+      "video": "videos/HU02/hu02_ca02_3_comentarios.mp4",
+      "captura": "capturas/HU02/hu02_ca02_3_comentarios.png"
+    },
+    {
+      "archivo": "hu02_ca02_5_volver.feature",
+      "hu": "HU02",
+      "titulo": "HU02 Consultar la información detallada de un álbum",
+      "nombre": "CA02.5 Volver al listado con la flecha",
+      "estado": "pasó",
+      "duracion": 21007000000,
+      "pasos": [
+        {
+          "texto": "Given abro la aplicación",
+          "estado": "passed",
+          "duracion": 1342000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de álbumes",
+          "estado": "passed",
+          "duracion": 2525000000,
+          "error": ""
+        },
+        {
+          "texto": "And toco el primer álbum de la lista",
+          "estado": "passed",
+          "duracion": 1008000000,
+          "error": ""
+        },
+        {
+          "texto": "And veo el detalle del álbum que toqué",
+          "estado": "passed",
+          "duracion": 1167000000,
+          "error": ""
+        },
+        {
+          "texto": "When toco la flecha de volver",
+          "estado": "passed",
+          "duracion": 831000000,
+          "error": ""
+        },
+        {
+          "texto": "Then veo el listado de álbumes",
+          "estado": "passed",
+          "duracion": 927000000,
+          "error": ""
+        }
+      ],
+      "video": "videos/HU02/hu02_ca02_5_volver.mp4",
+      "captura": "capturas/HU02/hu02_ca02_5_volver.png"
+    },
+    {
+      "archivo": "hu05_ca05_1_ver_listado.feature",
+      "hu": "HU05",
+      "titulo": "HU05 Consultar el listado de coleccionistas",
+      "nombre": "CA05.1 Ver el listado de coleccionistas",
+      "estado": "pasó",
+      "duracion": 19198000000,
+      "pasos": [
+        {
+          "texto": "Given abro la aplicación",
+          "estado": "passed",
+          "duracion": 1257000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de álbumes",
+          "estado": "passed",
+          "duracion": 1886000000,
+          "error": ""
+        },
+        {
+          "texto": "When voy a la sección de coleccionistas",
+          "estado": "passed",
+          "duracion": 905000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de coleccionistas",
+          "estado": "passed",
+          "duracion": 1283000000,
+          "error": ""
+        },
+        {
+          "texto": "Then veo al menos un coleccionista con nombre y resumen de su colección",
+          "estado": "passed",
+          "duracion": 744000000,
+          "error": ""
+        }
+      ],
+      "video": "videos/HU05/hu05_ca05_1_ver_listado.mp4",
+      "captura": "capturas/HU05/hu05_ca05_1_ver_listado.png"
+    },
+    {
+      "archivo": "hu05_ca05_2_ir_al_detalle.feature",
+      "hu": "HU05",
+      "titulo": "HU05 Consultar el listado de coleccionistas",
+      "nombre": "CA05.2 Ir al detalle de un coleccionista",
+      "estado": "pasó",
+      "duracion": 20653000000,
+      "pasos": [
+        {
+          "texto": "Given abro la aplicación",
+          "estado": "passed",
+          "duracion": 1330000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de álbumes",
+          "estado": "passed",
+          "duracion": 1984000000,
+          "error": ""
+        },
+        {
+          "texto": "And voy a la sección de coleccionistas",
+          "estado": "passed",
+          "duracion": 900000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de coleccionistas",
+          "estado": "passed",
+          "duracion": 1151000000,
+          "error": ""
+        },
+        {
+          "texto": "When toco el primer coleccionista de la lista",
+          "estado": "passed",
+          "duracion": 921000000,
+          "error": ""
+        },
+        {
+          "texto": "Then veo el detalle del coleccionista que toqué",
+          "estado": "passed",
+          "duracion": 1142000000,
+          "error": ""
+        }
+      ],
+      "video": "videos/HU05/hu05_ca05_2_ir_al_detalle.mp4",
+      "captura": "capturas/HU05/hu05_ca05_2_ir_al_detalle.png"
+    },
+    {
+      "archivo": "hu06_ca06_1_informacion.feature",
+      "hu": "HU06",
+      "titulo": "HU06 Consultar la información detallada de un coleccionista",
+      "nombre": "CA06.1 Ver la información del coleccionista",
+      "estado": "pasó",
+      "duracion": 22291000000,
+      "pasos": [
+        {
+          "texto": "Given abro la aplicación",
+          "estado": "passed",
+          "duracion": 1832000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de álbumes",
+          "estado": "passed",
+          "duracion": 1774000000,
+          "error": ""
+        },
+        {
+          "texto": "And voy a la sección de coleccionistas",
+          "estado": "passed",
+          "duracion": 961000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de coleccionistas",
+          "estado": "passed",
+          "duracion": 1089000000,
+          "error": ""
+        },
+        {
+          "texto": "When toco el primer coleccionista de la lista",
+          "estado": "passed",
+          "duracion": 934000000,
+          "error": ""
+        },
+        {
+          "texto": "Then veo el detalle del coleccionista que toqué",
+          "estado": "passed",
+          "duracion": 1131000000,
+          "error": ""
+        },
+        {
+          "texto": "And veo el identificador del coleccionista",
+          "estado": "passed",
+          "duracion": 626000000,
+          "error": ""
+        },
+        {
+          "texto": "And veo las pestañas \"Álbumes\", \"Artistas\" y \"Notas\"",
+          "estado": "passed",
+          "duracion": 808000000,
+          "error": ""
+        }
+      ],
+      "video": "videos/HU06/hu06_ca06_1_informacion.mp4",
+      "captura": "capturas/HU06/hu06_ca06_1_informacion.png"
+    },
+    {
+      "archivo": "hu06_ca06_2_pestanas.feature",
+      "hu": "HU06",
+      "titulo": "HU06 Consultar la información detallada de un coleccionista",
+      "nombre": "CA06.2 Cambiar entre álbumes, artistas y notas",
+      "estado": "pasó",
+      "duracion": 24021000000,
+      "pasos": [
+        {
+          "texto": "Given abro la aplicación",
+          "estado": "passed",
+          "duracion": 1838000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de álbumes",
+          "estado": "passed",
+          "duracion": 1812000000,
+          "error": ""
+        },
+        {
+          "texto": "And voy a la sección de coleccionistas",
+          "estado": "passed",
+          "duracion": 974000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de coleccionistas",
+          "estado": "passed",
+          "duracion": 1023000000,
+          "error": ""
+        },
+        {
+          "texto": "And toco el primer coleccionista de la lista",
+          "estado": "passed",
+          "duracion": 947000000,
+          "error": ""
+        },
+        {
+          "texto": "And veo el detalle del coleccionista que toqué",
+          "estado": "passed",
+          "duracion": 1131000000,
+          "error": ""
+        },
+        {
+          "texto": "When abro la pestaña \"Artistas\"",
+          "estado": "passed",
+          "duracion": 920000000,
+          "error": ""
+        },
+        {
+          "texto": "Then la pestaña \"Artistas\" queda seleccionada",
+          "estado": "passed",
+          "duracion": 644000000,
+          "error": ""
+        },
+        {
+          "texto": "When abro la pestaña \"Notas\"",
+          "estado": "passed",
+          "duracion": 861000000,
+          "error": ""
+        },
+        {
+          "texto": "Then la pestaña \"Notas\" queda seleccionada",
+          "estado": "passed",
+          "duracion": 630000000,
+          "error": ""
+        }
+      ],
+      "video": "videos/HU06/hu06_ca06_2_pestanas.mp4",
+      "captura": "capturas/HU06/hu06_ca06_2_pestanas.png"
+    },
+    {
+      "archivo": "hu09_ca09_1_publicar.feature",
+      "hu": "HU09",
+      "titulo": "HU09 Publicar un comentario sobre un álbum",
+      "nombre": "CA09.1 El coleccionista publica un comentario",
+      "estado": "pasó",
+      "duracion": 29943000000,
+      "pasos": [
+        {
+          "texto": "Given entro a la aplicación como coleccionista",
+          "estado": "passed",
+          "duracion": 4995000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de álbumes",
+          "estado": "passed",
+          "duracion": 724000000,
+          "error": ""
+        },
+        {
+          "texto": "And toco el primer álbum de la lista",
+          "estado": "passed",
+          "duracion": 903000000,
+          "error": ""
+        },
+        {
+          "texto": "And veo el detalle del álbum que toqué",
+          "estado": "passed",
+          "duracion": 1234000000,
+          "error": ""
+        },
+        {
+          "texto": "And veo el formulario para comentar a mi nombre",
+          "estado": "passed",
+          "duracion": 4021000000,
+          "error": ""
+        },
+        {
+          "texto": "When escribo un comentario nuevo",
+          "estado": "passed",
+          "duracion": 2397000000,
+          "error": ""
+        },
+        {
+          "texto": "And toco el botón de publicar comentario",
+          "estado": "passed",
+          "duracion": 896000000,
+          "error": ""
+        },
+        {
+          "texto": "Then el contador del comentario marca \"0 / 600\"",
+          "estado": "passed",
+          "duracion": 805000000,
+          "error": ""
+        },
+        {
+          "texto": "And no veo el elemento \"commentErrorText\"",
+          "estado": "passed",
+          "duracion": 650000000,
+          "error": ""
+        }
+      ],
+      "video": "videos/HU09/hu09_ca09_1_publicar.mp4",
+      "captura": "capturas/HU09/hu09_ca09_1_publicar.png"
+    },
+    {
+      "archivo": "hu09_ca09_2_descripcion_vacia.feature",
+      "hu": "HU09",
+      "titulo": "HU09 Publicar un comentario sobre un álbum",
+      "nombre": "CA09.2 No se publica un comentario sin descripción",
+      "estado": "pasó",
+      "duracion": 27089000000,
+      "pasos": [
+        {
+          "texto": "Given entro a la aplicación como coleccionista",
+          "estado": "passed",
+          "duracion": 5097000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de álbumes",
+          "estado": "passed",
+          "duracion": 626000000,
+          "error": ""
+        },
+        {
+          "texto": "And toco el primer álbum de la lista",
+          "estado": "passed",
+          "duracion": 989000000,
+          "error": ""
+        },
+        {
+          "texto": "And veo el detalle del álbum que toqué",
+          "estado": "passed",
+          "duracion": 1196000000,
+          "error": ""
+        },
+        {
+          "texto": "When toco el botón de publicar comentario",
+          "estado": "passed",
+          "duracion": 5198000000,
+          "error": ""
+        },
+        {
+          "texto": "Then veo el error de comentario \"Escribe la descripción del comentario.\"",
+          "estado": "passed",
+          "duracion": 702000000,
+          "error": ""
+        }
+      ],
+      "video": "videos/HU09/hu09_ca09_2_descripcion_vacia.mp4",
+      "captura": "capturas/HU09/hu09_ca09_2_descripcion_vacia.png"
+    },
+    {
+      "archivo": "hu09_ca09_3_visitante.feature",
+      "hu": "HU09",
+      "titulo": "HU09 Publicar un comentario sobre un álbum",
+      "nombre": "CA09.3 El visitante no puede comentar",
+      "estado": "pasó",
+      "duracion": 24851000000,
+      "pasos": [
+        {
+          "texto": "Given entro a la aplicación como visitante",
+          "estado": "passed",
+          "duracion": 1306000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de álbumes",
+          "estado": "passed",
+          "duracion": 1914000000,
+          "error": ""
+        },
+        {
+          "texto": "When toco el primer álbum de la lista",
+          "estado": "passed",
+          "duracion": 906000000,
+          "error": ""
+        },
+        {
+          "texto": "Then veo el detalle del álbum que toqué",
+          "estado": "passed",
+          "duracion": 1388000000,
+          "error": ""
+        },
+        {
+          "texto": "And no veo el formulario para comentar",
+          "estado": "passed",
+          "duracion": 6033000000,
+          "error": ""
+        }
+      ],
+      "video": "videos/HU09/hu09_ca09_3_visitante.mp4",
+      "captura": "capturas/HU09/hu09_ca09_3_visitante.png"
+    },
+    {
+      "archivo": "hu09_ca09_4_cancelar.feature",
+      "hu": "HU09",
+      "titulo": "HU09 Publicar un comentario sobre un álbum",
+      "nombre": "CA09.4 Cancelar limpia el formulario",
+      "estado": "pasó",
+      "duracion": 29042000000,
+      "pasos": [
+        {
+          "texto": "Given entro a la aplicación como coleccionista",
+          "estado": "passed",
+          "duracion": 3125000000,
+          "error": ""
+        },
+        {
+          "texto": "And espero a que cargue el listado de álbumes",
+          "estado": "passed",
+          "duracion": 1937000000,
+          "error": ""
+        },
+        {
+          "texto": "And toco el primer álbum de la lista",
+          "estado": "passed",
+          "duracion": 1039000000,
+          "error": ""
+        },
+        {
+          "texto": "And veo el detalle del álbum que toqué",
+          "estado": "passed",
+          "duracion": 1235000000,
+          "error": ""
+        },
+        {
+          "texto": "When escribo un comentario nuevo",
+          "estado": "passed",
+          "duracion": 6229000000,
+          "error": ""
+        },
+        {
+          "texto": "Then el contador del comentario ya no está en cero",
+          "estado": "passed",
+          "duracion": 661000000,
+          "error": ""
+        },
+        {
+          "texto": "When toco el botón de cancelar comentario",
+          "estado": "passed",
+          "duracion": 789000000,
+          "error": ""
+        },
+        {
+          "texto": "Then el contador del comentario marca \"0 / 600\"",
+          "estado": "passed",
+          "duracion": 672000000,
+          "error": ""
+        }
+      ],
+      "video": "videos/HU09/hu09_ca09_4_cancelar.mp4",
+      "captura": "capturas/HU09/hu09_ca09_4_cancelar.png"
+    }
+  ],
+  "apartados": [
+    {
+      "archivo": "pendientes/hu09_comentario_no_aparece_bug.feature.txt",
+      "nombre": "CA09.1b El comentario publicado aparece en la lista",
+      "motivo": "DEFECTO CONOCIDO (issue #86: https://github.com/jpmendeza2401/MISW-Software-aplicaciones-moviles/issues/86): la app muestra «Comentario publicado» pero el comentario nuevo no se ve en la lista del detalle del álbum. Detectado por este escenario el 15/11/2026 en Honor NAA-LX3 (Android 15) y confirmado manualmente. Este escenario FALLA mientras el defecto exista; por eso está en pendientes/ (.txt). Al corregirse, moverlo a features/ como .feature: queda como prueba de regresión."
+    },
+    {
+      "archivo": "pendientes/hu09_teclado_bug.feature.txt",
+      "nombre": "CA09.5 La caja de comentario sigue visible con el teclado abierto",
+      "motivo": "DEFECTO CONOCIDO (issue #87: https://github.com/jpmendeza2401/MISW-Software-aplicaciones-moviles/issues/87): en dispositivo físico, al abrir el teclado el formulario queda reducido a una franja y la caja de texto deja de verse. Este escenario FALLA mientras el defecto exista; por eso está en pendientes/ (.txt) y no se ejecuta con la suite. Activarlo (mover a features/ como .feature) cuando el defecto se corrija, para que quede como prueba de regresión. Requiere agregar el paso «toco la caja de descripción del comentario» (clic sin cerrar teclado)."
+    }
+  ]
+}

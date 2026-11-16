@@ -1,0 +1,18 @@
+Feature: HU09 Publicar un comentario sobre un álbum
+
+  # DEFECTO CONOCIDO (issue #87: https://github.com/jpmendeza2401/MISW-Software-aplicaciones-moviles/issues/87): en dispositivo físico, al abrir el
+  # teclado el formulario queda reducido a una franja y la caja de texto deja de verse.
+  # Este escenario FALLA mientras el defecto exista; por eso está en pendientes/ (.txt)
+  # y no se ejecuta con la suite. Activarlo (mover a features/ como .feature) cuando el
+  # defecto se corrija, para que quede como prueba de regresión.
+  # Requiere agregar el paso «toco la caja de descripción del comentario» (clic sin cerrar teclado).
+
+  @user1 @mobile
+  Scenario: CA09.5 La caja de comentario sigue visible con el teclado abierto
+    Given entro a la aplicación como coleccionista
+    And espero a que cargue el listado de álbumes
+    And toco el primer álbum de la lista
+    And veo el detalle del álbum que toqué
+    When toco la caja de descripción del comentario
+    Then veo el elemento "commentDescriptionInput"
+    And veo el elemento "publishCommentButton"

@@ -1,0 +1,18 @@
+Feature: HU09 Publicar un comentario sobre un álbum
+
+  # DEFECTO CONOCIDO (issue #86: https://github.com/jpmendeza2401/MISW-Software-aplicaciones-moviles/issues/86):
+  # la app muestra «Comentario publicado» pero el comentario nuevo no se ve en la lista
+  # del detalle del álbum. Detectado por este escenario el 15/11/2026 en Honor NAA-LX3
+  # (Android 15) y confirmado manualmente.
+  # Este escenario FALLA mientras el defecto exista; por eso está en pendientes/ (.txt).
+  # Al corregirse, moverlo a features/ como .feature: queda como prueba de regresión.
+
+  @user1 @mobile
+  Scenario: CA09.1b El comentario publicado aparece en la lista
+    Given entro a la aplicación como coleccionista
+    And espero a que cargue el listado de álbumes
+    And toco el primer álbum de la lista
+    And veo el detalle del álbum que toqué
+    When escribo un comentario nuevo
+    And toco el botón de publicar comentario
+    Then veo mi comentario en la lista de comentarios
