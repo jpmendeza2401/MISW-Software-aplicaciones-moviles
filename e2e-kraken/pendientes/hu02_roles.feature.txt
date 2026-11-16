@@ -1,0 +1,50 @@
+Feature: HU02 Consultar la información detallada de un álbum
+  Como visitante quiero ver el detalle de un álbum
+  para conocer su información, sus tracks y sus comentarios.
+
+  @user1 @mobile
+  Scenario: CA02.1 Ver la información del álbum
+    Given abro la aplicación
+    And espero a que cargue el listado de álbumes
+    When toco el primer álbum de la lista
+    Then veo el detalle del álbum que toqué
+    And veo el año de lanzamiento con cuatro dígitos
+    And veo el género y el sello discográfico
+    And veo la descripción del álbum
+
+  @user1 @mobile
+  Scenario: CA02.2 Ver los tracks del álbum
+    Given abro la aplicación
+    And espero a que cargue el listado de álbumes
+    When toco el primer álbum de la lista
+    Then veo el detalle del álbum que toqué
+    And veo la sección "Tracks" con nombre y duración de cada track
+
+  @user1 @mobile
+  Scenario: CA02.3 Ver los comentarios del álbum
+    Given abro la aplicación
+    And espero a que cargue el listado de álbumes
+    When toco el primer álbum de la lista
+    Then veo el detalle del álbum que toqué
+    And veo la sección "Comentarios" con estrellas y texto de cada comentario
+
+  @user1 @mobile
+  Scenario: CA02.5 Volver al listado con la flecha
+    Given abro la aplicación
+    And espero a que cargue el listado de álbumes
+    And toco el primer álbum de la lista
+    And veo el detalle del álbum que toqué
+    When toco la flecha de volver
+    Then veo el listado de álbumes
+
+  # PENDIENTE (CA02.6): los botones «Agregar a mi colección», «Agregar track» y
+  # «Comentar» dependen del rol, que aún no existe en la app. Activar cuando exista.
+  #
+  # @user1 @mobile
+  # Scenario: CA02.6 El visitante no ve las acciones del coleccionista
+  #   Given entro a la aplicación como "visitante"
+  #   And espero a que cargue el listado de álbumes
+  #   When toco el primer álbum de la lista
+  #   Then no veo el botón "Agregar a mi colección"
+  #   And no veo el botón "Agregar track"
+  #   And no veo el botón "Comentar"

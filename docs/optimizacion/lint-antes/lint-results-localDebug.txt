@@ -1,0 +1,340 @@
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\values\themes.xml:26: Error: android:textFontWeight requires API level 28 (current min is 24) [NewApi]
+        <item name="android:textFontWeight">700</item>
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\values\themes.xml:33: Error: android:textFontWeight requires API level 28 (current min is 24) [NewApi]
+        <item name="android:textFontWeight">600</item>
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\values\themes.xml:40: Error: android:textFontWeight requires API level 28 (current min is 24) [NewApi]
+        <item name="android:textFontWeight">600</item>
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "NewApi":
+   This check scans through all the Android API calls in the application and
+   warns about any calls that are not available on all versions targeted by
+   this application (according to its minimum SDK attribute in the manifest).
+
+   If you really want to use this API and don't need to support older devices
+   just set the minSdkVersion in your build.gradle or AndroidManifest.xml
+   files.
+
+   If your code is deliberately accessing newer APIs, and you have ensured
+   (e.g. with conditional execution) that this code will only ever be called
+   on a supported platform, then you can annotate your class or method with
+   the @TargetApi annotation specifying the local minimum SDK to apply, such
+   as @TargetApi(11), such that this check considers 11 rather than your
+   manifest file's minimum SDK as the required API level.
+
+   If you are deliberately setting android: attributes in style definitions,
+   make sure you place this in a values-vNN folder in order to avoid running
+   into runtime conflicts on certain devices where manufacturers have added
+   custom attributes whose ids conflict with the new ones on later platforms.
+
+   Similarly, you can use tools:targetApi="11" in an XML file to indicate that
+   the element will only be inflated in an adequate context.
+
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\manrope.xml:3: Warning: Attribute fontStyle is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/manrope_regular" android:fontStyle="normal" android:fontWeight="400" />
+                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\manrope.xml:3: Warning: Attribute fontWeight is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/manrope_regular" android:fontStyle="normal" android:fontWeight="400" />
+                                                                          ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\manrope.xml:3: Warning: Attribute font is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/manrope_regular" android:fontStyle="normal" android:fontWeight="400" />
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\manrope.xml:4: Warning: Attribute fontStyle is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/manrope_semibold" android:fontStyle="normal" android:fontWeight="600" />
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\manrope.xml:4: Warning: Attribute fontWeight is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/manrope_semibold" android:fontStyle="normal" android:fontWeight="600" />
+                                                                           ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\manrope.xml:4: Warning: Attribute font is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/manrope_semibold" android:fontStyle="normal" android:fontWeight="600" />
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\manrope.xml:5: Warning: Attribute fontStyle is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/manrope_semibold" android:fontStyle="normal" android:fontWeight="700" />
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\manrope.xml:5: Warning: Attribute fontWeight is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/manrope_semibold" android:fontStyle="normal" android:fontWeight="700" />
+                                                                           ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\manrope.xml:5: Warning: Attribute font is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/manrope_semibold" android:fontStyle="normal" android:fontWeight="700" />
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\playfair_display.xml:3: Warning: Attribute fontStyle is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/playfair_display_semibold" android:fontStyle="normal" android:fontWeight="400" />
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\playfair_display.xml:3: Warning: Attribute fontWeight is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/playfair_display_semibold" android:fontStyle="normal" android:fontWeight="400" />
+                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\playfair_display.xml:3: Warning: Attribute font is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/playfair_display_semibold" android:fontStyle="normal" android:fontWeight="400" />
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\playfair_display.xml:4: Warning: Attribute fontStyle is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/playfair_display_semibold" android:fontStyle="normal" android:fontWeight="600" />
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\playfair_display.xml:4: Warning: Attribute fontWeight is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/playfair_display_semibold" android:fontStyle="normal" android:fontWeight="600" />
+                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\playfair_display.xml:4: Warning: Attribute font is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/playfair_display_semibold" android:fontStyle="normal" android:fontWeight="600" />
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\playfair_display.xml:5: Warning: Attribute fontStyle is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/playfair_display_bold" android:fontStyle="normal" android:fontWeight="700" />
+                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\playfair_display.xml:5: Warning: Attribute fontWeight is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/playfair_display_bold" android:fontStyle="normal" android:fontWeight="700" />
+                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\font\playfair_display.xml:5: Warning: Attribute font is only used in API level 26 and higher (current min is 24) [UnusedAttribute]
+    <font android:font="@font/playfair_display_bold" android:fontStyle="normal" android:fontWeight="700" />
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedAttribute":
+   This check finds attributes set in XML files that were introduced in a
+   version newer than the oldest version targeted by your application (with
+   the minSdkVersion attribute).
+
+   This is not an error; the application will simply ignore the attribute.
+   However, if the attribute is important to the appearance or functionality
+   of your application, you should consider finding an alternative way to
+   achieve the same result with only available attributes, and then you can
+   optionally create a copy of the layout in a layout-vNN folder which will be
+   used on API NN or higher where you can take advantage of the newer
+   attribute.
+
+   Note: This check does not only apply to attributes. For example, some tags
+   can be unused too, such as the new <tag> element in layouts introduced in
+   API 21.
+
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\java\com\example\aplicacionvinilos\ui\adapters\ItemDiffCallback.kt:8: Error: Suspicious equality check: equals() is not implemented in T [DiffUtilEquals]
+    override fun areContentsTheSame(oldItem: T, newItem: T) = oldItem == newItem
+                                                                      ~~
+
+   Explanation for issues of type "DiffUtilEquals":
+   areContentsTheSame is used by DiffUtil to produce diffs. If the method is
+   implemented incorrectly, such as using identity equals instead of equals,
+   or calling equals on a class that has not implemented it, weird visual
+   artifacts can occur.
+
+   https://issuetracker.google.com/116789824
+
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\gradle\libs.versions.toml:9: Warning: A newer version of androidx.activity:activity-ktx than 1.8.0 is available: 1.8.2 [GradleDependency]
+activityKtx = "1.8.0"
+              ~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\gradle\libs.versions.toml:16: Warning: A newer version of androidx.lifecycle:lifecycle-livedata-ktx than 2.8.7 is available: 2.10.0 [GradleDependency]
+lifecycle = "2.8.7"
+            ~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\gradle\libs.versions.toml:16: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel-ktx than 2.8.7 is available: 2.10.0 [GradleDependency]
+lifecycle = "2.8.7"
+            ~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\layout\activity_login.xml:250: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
+            <LinearLayout
+             ~~~~~~~~~~~~
+
+   Explanation for issues of type "UseCompoundDrawables":
+   A LinearLayout which contains an ImageView and a TextView can be more
+   efficiently handled as a compound drawable (a single TextView, using the
+   drawableTop, drawableLeft, drawableRight and/or drawableBottom attributes
+   to draw one or more images adjacent to the text).
+
+   If the two widgets are offset from each other with margins, this can be
+   replaced with a drawablePadding attribute.
+
+   There's a lint quickfix to perform this conversion in the Eclipse plugin.
+
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\layout\activity_album_detail.xml:7: Warning: Possible overdraw: Root element paints background @color/groove_canvas with a theme that also paints a background (inferred theme is @style/Theme_AplicacionVinilos_Groove) [Overdraw]
+    android:background="@color/groove_canvas"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\layout\activity_album_list.xml:10: Warning: Possible overdraw: Root element paints background #100F0D with a theme that also paints a background (inferred theme is @style/Theme.AplicacionVinilos) [Overdraw]
+    android:background="#100F0D"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\layout\activity_collector_detail.xml:10: Warning: Possible overdraw: Root element paints background #100F0D with a theme that also paints a background (inferred theme is @style/Theme.AplicacionVinilos) [Overdraw]
+    android:background="#100F0D"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\layout\activity_collector_list.xml:10: Warning: Possible overdraw: Root element paints background #100F0D with a theme that also paints a background (inferred theme is @style/Theme.AplicacionVinilos) [Overdraw]
+    android:background="#100F0D"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\layout\activity_login.xml:8: Warning: Possible overdraw: Root element paints background @color/groove_canvas with a theme that also paints a background (inferred theme is @style/Theme_AplicacionVinilos_Groove) [Overdraw]
+    android:background="@color/groove_canvas"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "Overdraw":
+   If you set a background drawable on a root view, then you should use a
+   custom theme where the theme background is null. Otherwise, the theme
+   background will be painted first, only to have your custom background
+   completely cover it; this is called "overdraw".
+
+   NOTE: This detector relies on figuring out which layouts are associated
+   with which activities based on scanning the Java code, and it's currently
+   doing that using an inexact pattern matching algorithm. Therefore, it can
+   incorrectly conclude which activity the layout is associated with and then
+   wrongly complain that a background-theme is hidden.
+
+   If you want your custom background on multiple pages, then you should
+   consider making a custom theme with your custom background and just using
+   that theme instead of a root element background.
+
+   Of course it's possible that your custom drawable is translucent and you
+   want it to be mixed with the background. However, you will get better
+   performance if you pre-mix the background with your drawable and use that
+   resulting image or color as a custom theme background instead.
+
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\values\colors.xml:3: Warning: The resource R.color.black appears to be unused [UnusedResources]
+    <color name="black">#FF000000</color>
+           ~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\values\colors.xml:4: Warning: The resource R.color.white appears to be unused [UnusedResources]
+    <color name="white">#FFFFFFFF</color>
+           ~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\values\strings.xml:20: Warning: The resource R.string.collector_name_placeholder appears to be unused [UnusedResources]
+    <string name="collector_name_placeholder">Nombre del coleccionista</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\values\strings.xml:21: Warning: The resource R.string.collector_id_placeholder appears to be unused [UnusedResources]
+    <string name="collector_id_placeholder">ID: 1</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\values\strings.xml:22: Warning: The resource R.string.collectors_title appears to be unused [UnusedResources]
+    <string name="collectors_title">Coleccionistas</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\values\strings.xml:23: Warning: The resource R.string.collectors_subtitle appears to be unused [UnusedResources]
+    <string name="collectors_subtitle">Consulta los coleccionistas registrados.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\values\strings.xml:25: Warning: The resource R.string.collectors_error appears to be unused [UnusedResources]
+    <string name="collectors_error">No fue posible cargar los coleccionistas.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\values\strings.xml:44: Warning: The resource R.string.login_titulo appears to be unused [UnusedResources]
+    <string name="login_titulo">Iniciar sesión</string>
+            ~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\values\strings.xml:45: Warning: The resource R.string.login_email_hint appears to be unused [UnusedResources]
+    <string name="login_email_hint">Correo electrónico</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests=true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests=true.
+
+   Available options:
+
+   **skip-libraries** (default is true):
+   Whether the unused resource check should skip reporting unused resources in libraries.
+
+   Many libraries will declare resources that are part of the library surface; other modules depending on the library will also reference the resources. To avoid reporting all these resources as unused (in the context of a library), the unused resource check normally skips reporting unused resources in libraries. Instead, run the unused resource check on the consuming app module (along with `checkDependencies=true`).
+
+   However, there are cases where you want to check that all the resources declared in a library are used; in that case, you can disable the skip option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UnusedResources">
+           <option name="skip-libraries" value="true" />
+       </issue>
+   </lint>
+   ```
+
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\java\com\example\aplicacionvinilos\ui\adapters\CollectorAlbumAdapter.kt:19: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            binding.albumId.text = "Identificador: ${album.id}"
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\java\com\example\aplicacionvinilos\ui\adapters\CollectorAlbumAdapter.kt:19: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            binding.albumId.text = "Identificador: ${album.id}"
+                                    ~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\java\com\example\aplicacionvinilos\ui\adapters\CollectorAlbumAdapter.kt:20: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            binding.albumPrice.text = "Precio: ${album.price}"
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\java\com\example\aplicacionvinilos\ui\adapters\CollectorAlbumAdapter.kt:20: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            binding.albumPrice.text = "Precio: ${album.price}"
+                                       ~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\java\com\example\aplicacionvinilos\ui\adapters\CollectorAlbumAdapter.kt:21: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            binding.albumStatus.text = "Estado: ${album.status}"
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\java\com\example\aplicacionvinilos\ui\adapters\CollectorAlbumAdapter.kt:21: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            binding.albumStatus.text = "Estado: ${album.status}"
+                                        ~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\java\com\example\aplicacionvinilos\ui\adapters\CollectorCommentAdapter.kt:20: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                "★".repeat(comment.rating.coerceIn(0, 5)) +
+                ^
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\java\com\example\aplicacionvinilos\ui\CollectorDetailActivity.kt:187: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            "Teléfono: ${collector.telephone}"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\java\com\example\aplicacionvinilos\ui\CollectorDetailActivity.kt:187: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            "Teléfono: ${collector.telephone}"
+             ~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\java\com\example\aplicacionvinilos\ui\CollectorDetailActivity.kt:190: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            "Correo: ${collector.email}"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\java\com\example\aplicacionvinilos\ui\CollectorDetailActivity.kt:190: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            "Correo: ${collector.email}"
+             ~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\java\com\example\aplicacionvinilos\ui\adapters\CommentAdapter.kt:17: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                FILLED_STAR.repeat(filled) + EMPTY_STAR.repeat(MAX_RATING - filled)
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\layout\activity_collector_detail.xml:48: Warning: Hardcoded string "MB", should use @string resource [HardcodedText]
+                    android:text="MB"
+                    ~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\layout\activity_collector_detail.xml:81: Warning: Hardcoded string "Información de contacto", should use @string resource [HardcodedText]
+                android:text="Información de contacto"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\layout\activity_collector_detail.xml:117: Warning: Hardcoded string "Álbumes", should use @string resource [HardcodedText]
+                    android:text="Álbumes" />
+                    ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\layout\activity_collector_detail.xml:122: Warning: Hardcoded string "Artistas", should use @string resource [HardcodedText]
+                    android:text="Artistas" />
+                    ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\layout\activity_collector_detail.xml:127: Warning: Hardcoded string "Notas", should use @string resource [HardcodedText]
+                    android:text="Notas" />
+                    ~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\layout\item_album.xml:65: Warning: Hardcoded string "›", should use @string resource [HardcodedText]
+            android:text="›"
+            ~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\layout\item_collector.xml:86: Warning: Hardcoded string "›", should use @string resource [HardcodedText]
+            android:text="›"
+            ~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\layout\item_collector_album.xml:22: Warning: Hardcoded string "Álbum", should use @string resource [HardcodedText]
+            android:text="Álbum"
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\aleortbas\AndroidStudioProjects\AplicacionVinilos\app\src\main\res\layout\item_collector_performer.xml:24: Warning: Hardcoded string "Imagen del artista", should use @string resource [HardcodedText]
+            android:contentDescription="Imagen del artista"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+4 errors, 57 warnings

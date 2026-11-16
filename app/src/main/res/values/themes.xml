@@ -6,4 +6,87 @@
     </style>
 
     <style name="Theme.AplicacionVinilos" parent="Base.Theme.AplicacionVinilos" />
+
+    <style name="Theme.AplicacionVinilos.Groove" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/groove_primary</item>
+        <item name="colorOnPrimary">@color/groove_on_primary</item>
+        <item name="android:colorBackground">@color/groove_canvas</item>
+        <item name="colorSurface">@color/groove_canvas</item>
+        <item name="colorOnSurface">@color/groove_text_primary</item>
+        <item name="android:textColorPrimary">@color/groove_text_primary</item>
+        <item name="android:textColorSecondary">@color/groove_text_muted</item>
+        <item name="android:windowBackground">@color/groove_canvas</item>
+        <item name="android:fontFamily">@font/manrope</item>
+    </style>
+
+    <style name="Groove.Text.Headline" parent="@android:style/TextAppearance.Material">
+        <item name="android:fontFamily">@font/playfair_display</item>
+        <item name="android:textColor">@color/groove_text_primary</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textFontWeight" tools:targetApi="28">700</item>
+    </style>
+
+    <style name="Groove.Text.Section" parent="@android:style/TextAppearance.Material">
+        <item name="android:fontFamily">@font/playfair_display</item>
+        <item name="android:textColor">@color/groove_text_primary</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textFontWeight" tools:targetApi="28">600</item>
+    </style>
+
+    <style name="Groove.Text.Title" parent="@android:style/TextAppearance.Material">
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="android:textColor">@color/groove_text_primary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textFontWeight" tools:targetApi="28">600</item>
+    </style>
+
+    <style name="Groove.Text.Body" parent="@android:style/TextAppearance.Material">
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="android:textColor">@color/groove_text_muted</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="Groove.Text.Meta" parent="@android:style/TextAppearance.Material">
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="android:textColor">@color/groove_text_subtle</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- HU09: etiquetas en mayúsculas del formulario de comentario -->
+    <style name="Groove.Text.Label" parent="@android:style/TextAppearance.Material">
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="android:textColor">@color/groove_text_muted</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- HU09: botón principal dorado y botón secundario oscuro -->
+    <style name="Groove.Button.Primary" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/groove_primary</item>
+        <item name="android:textColor">@color/groove_on_primary</item>
+        <item name="iconTint">@color/groove_on_primary</item>
+        <item name="iconGravity">textStart</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Groove.Button.Secondary" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/groove_deck</item>
+        <item name="android:textColor">@color/groove_text_primary</item>
+        <item name="iconTint">@color/groove_text_primary</item>
+        <item name="iconGravity">textStart</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="strokeColor">@color/groove_card_border</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
 </resources>

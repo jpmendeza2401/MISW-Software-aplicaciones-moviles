@@ -1,0 +1,65 @@
+Applications Memory Usage (in Kilobytes):
+Uptime: 300043 Realtime: 300043
+
+** MEMINFO in pid 9168 [com.example.aplicacionvinilos] **
+                   Pss  Private  Private  SwapPss      Rss     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty    Total     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------   ------
+  Native Heap    18203    18176       16       33    19344    31616    24494     3206
+  Dalvik Heap     6499     6448       16       51     8784    14814     7407     7407
+ Dalvik Other    11523     4016        0        1    19264                           
+        Stack     1600     1600        0        0     1600                           
+    Other dev       24        0       16        0      672                           
+     .so mmap     4911     1072      128        2    43520                           
+    .jar mmap     3695        0      752        0    48976                           
+    .apk mmap      785        0      224        0     3072                           
+    .ttf mmap      657        0      288        0     1488                           
+    .dex mmap    16817    16800        0        0    17888                           
+    .oat mmap       25        0        0        0     1872                           
+    .art mmap     9373     9088       64       12    22368                           
+   Other mmap     4091       16      144        0     9504                           
+        Memfd       17        0        0        0      640                           
+      Unknown     1458     1216      240        6     2000                           
+        TOTAL    79783    58432     1888      105   200992    46430    31901    10613
+ 
+ App Summary
+                       Pss(KB)                        Rss(KB)
+                        ------                         ------
+           Java Heap:    15600                          31152
+         Native Heap:    18176                          19344
+                Code:    19376                         131936
+               Stack:     1600                           1600
+            Graphics:        0                              0
+       Private Other:     5568
+              System:    19463
+             Unknown:                                   16960
+ 
+           TOTAL PSS:    79783            TOTAL RSS:   200992       TOTAL SWAP PSS:      105
+ 
+ Objects
+               Views:       71         ViewRootImpl:        1
+         AppContexts:        6           Activities:        1
+              Assets:       22        AssetManagers:        0
+       Local Binders:       36        Proxy Binders:       65
+       Parcel memory:        8         Parcel count:       34
+    Death Recipients:        0             WebViews:        0
+ 
+ Native Allocations
+                         Count                       Total(kB)
+                        ------                         ------
+   Bitmap (malloced):        8                            836
+    Other (malloced):     1176                            110
+ Other (nonmalloced):      122                             83
+    Other (malloced):        8                              0
+ 
+ Shared Bitmaps
+                         Count                       Size(KB)
+                        ------                         ------
+              Mapped:        0                              0
+  (Enable debug.hwui.bitmap_ashmem_long_name sysprop to count unique bitmap allocations)
+ 
+ SQL
+         MEMORY_USED:        0
+  PAGECACHE_OVERFLOW:        0          MALLOC_SIZE:        0
+ 
+ 

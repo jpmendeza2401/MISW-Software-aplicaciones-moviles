@@ -1,5 +1,6 @@
 package com.example.aplicacionvinilos.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -30,7 +31,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.searchButton.setOnClickListener { search() }
+        binding.detailButton.setOnClickListener { openAlbumDetail() }
         viewModel.band.observe(this) { render(it) }
+    }
+
+    private fun openAlbumDetail() {
+        val albumId = binding.albumIdInput.text.toString().toIntOrNull()
+        if (albumId == null) {
+            binding.resultText.text = getString(R.string.error_ids_invalidos)
+            return
+        }
+        startActivity(
+            Intent(this, AlbumDetailActivity::class.java)
+                .putExtra(AlbumDetailActivity.EXTRA_ALBUM_ID, albumId)
+        )
     }
 
     private fun search() {

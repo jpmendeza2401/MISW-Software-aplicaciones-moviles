@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,16 +14,48 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplicacionVinilos">
+
+        <!-- Login simulado: pantalla de inicio -->
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.LoginActivity"
             android:exported="true"
+            android:theme="@style/Theme.AplicacionVinilos.Groove"
             android:windowSoftInputMode="adjustResize">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+        <!-- HU01: listado de álbumes -->
+        <activity
+            android:name=".ui.AlbumListActivity"
+            android:exported="false" />
+
+        <!-- Actividad principal del ejemplo de HU01 -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- HU02: detalle del álbum -->
+        <activity
+            android:name=".ui.AlbumDetailActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.AplicacionVinilos.Groove" />
+
+        <!-- HU05: listado de coleccionistas -->
+        <activity
+            android:name=".ui.CollectorListActivity"
+            android:exported="false" />
+
+        <!-- HU06: detalle de coleccionistas -->
+        <activity
+            android:name=".ui.CollectorDetailActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
