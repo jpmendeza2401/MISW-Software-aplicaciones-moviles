@@ -5,6 +5,8 @@
   "description": "Pruebas E2E con Kraken para la app Vinilos",
   "scripts": {
     "test": "kraken-node run",
+    "evidencias": "node scripts/evidencias.js",
+    "videos-wiki": "node scripts/videos-wiki.js",
     "doctor": "kraken-node doctor"
   },
   "dependencies": {

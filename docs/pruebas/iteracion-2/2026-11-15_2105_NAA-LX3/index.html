@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resultados E2E · Vinilos · NAA-LX3</title>
+<style>
+  :root { --fondo:#faf8f4; --tarjeta:#fff; --texto:#1f1d1a; --suave:#6b665e; --linea:#e4dfd6; --acento:#8a6a1c;
+          --ok:#1f6b3a; --okf:#e3f2e8; --mal:#a12626; --malf:#fbe6e6; --nd:#6b665e; --ndf:#eeeae3; }
+  @media (prefers-color-scheme: dark) { :root { --fondo:#151412; --tarjeta:#1e1c19; --texto:#f2ede4; --suave:#a8a195; --linea:#35312b; --acento:#d8ad4a;
+          --ok:#7fd39b; --okf:#17301f; --mal:#f29a9a; --malf:#3a1a1a; --nd:#a8a195; --ndf:#2a2722; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--fondo); color:var(--texto); font:16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1040px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 1.7rem; margin: 0 0 4px; } h2 { font-size: 1.2rem; margin: 40px 0 12px; }
+  .sub, .meta { color: var(--suave); } .meta { font-size: .85rem; font-weight: 400; margin-left: 6px; }
+  .veredicto { font-size: 1.15rem; margin: 20px 0; padding: 14px 16px; border-left: 4px solid var(--acento); background: var(--tarjeta); }
+  .datos { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin: 20px 0; padding: 0; }
+  .datos div { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 8px; padding: 12px 14px; }
+  .datos dt { font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--suave); }
+  .datos dd { margin: 2px 0 0; font-weight: 600; overflow-wrap: anywhere; }
+  table { width: 100%; border-collapse: collapse; background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 8px; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--linea); vertical-align: top; }
+  th { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--suave); }
+  tr:last-child td { border-bottom: 0; } .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  a { color: var(--acento); }
+  .pill { display: inline-block; min-width: 4.6em; text-align: center; padding: 1px 9px; border-radius: 999px; font-size: .8rem; font-weight: 600; }
+  .ok { color: var(--ok); background: var(--okf); } .mal { color: var(--mal); background: var(--malf); } .nd { color: var(--nd); background: var(--ndf); }
+  details { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 8px; margin: 10px 0; }
+  summary { cursor: pointer; padding: 12px 14px; }
+  .cuerpo { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 20px; padding: 4px 14px 16px; }
+  @media (max-width: 760px) { .cuerpo { grid-template-columns: 1fr; } }
+  .cuerpo table { border: 0; } .medios { display: grid; gap: 12px; align-content: start; }
+  figure { margin: 0; } video, img { width: 100%; max-height: 420px; object-fit: contain; background: #000; border-radius: 6px; display: block; }
+  figcaption { font-size: .82rem; color: var(--suave); margin-top: 4px; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .8rem; color: var(--mal); background: var(--malf); padding: 8px; border-radius: 6px; margin: 6px 0 0; }
+  code { font-size: .85em; }
+</style></head><body><main>
+  <h1>Resultados de las pruebas E2E · Vinilos</h1>
+  <p class="sub">Suite automatizada con Kraken (Cucumber + Appium) sobre las historias de usuario de las iteraciones 1 y 2.</p>
+  <p class="veredicto">Los 14 escenarios pasaron.</p>
+  <dl class="datos">
+    <div><dt>Fecha de la corrida</dt><dd>15 de noviembre de 2026 a las 9:05 p. m.</dd></div>
+    <div><dt>Dispositivo</dt><dd>NAA-LX3 · Dispositivo físico</dd></div>
+    <div><dt>Sistema</dt><dd>Android 15 (API 35)</dd></div>
+    <div><dt>Versión probada</dt><dd>feature/e2e-kraken-iteracion2 @ db471f9 + cambios sin confirmar · APK remoteDebug</dd></div>
+    <div><dt>Duración de las pruebas</dt><dd>317.5 s</dd></div>
+    
+  </dl>
+  <h2>Resumen por historia de usuario</h2>
+  <table><thead><tr><th>HU</th><th>Historia</th><th class="num">Escenarios</th><th class="num">Pasaron</th><th class="num">Fallaron</th><th class="num">No ejecutados</th></tr></thead>
+  <tbody><tr><td><a href="#HU01">HU01</a></td><td>Consultar catálogo de álbumes</td>
+      <td class="num">2</td><td class="num">2</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td><a href="#HU02">HU02</a></td><td>Consultar la información detallada de un álbum</td>
+      <td class="num">4</td><td class="num">4</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td><a href="#HU05">HU05</a></td><td>Consultar el listado de coleccionistas</td>
+      <td class="num">2</td><td class="num">2</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td><a href="#HU06">HU06</a></td><td>Consultar la información detallada de un coleccionista</td>
+      <td class="num">2</td><td class="num">2</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td><a href="#HU09">HU09</a></td><td>Publicar un comentario sobre un álbum</td>
+      <td class="num">4</td><td class="num">4</td><td class="num">0</td><td class="num">0</td></tr></tbody></table>
+  <section id="HU01"><h2>HU01 Consultar catálogo de álbumes</h2>
+      <details >
+        <summary><span class="pill ok">pasó</span> <strong>CA01.1 Ver el listado de álbumes</strong>
+          <span class="meta">17.3 s · hu01_ca01_1_ver_listado.feature</span></summary>
+        <div class="cuerpo">
+          <div class="pasos">
+            
+            <table><thead><tr><th>Paso</th><th>Resultado</th><th class="num">Duración</th></tr></thead><tbody>
+            <tr><td>Given abro la aplicación</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.4 s</td></tr>
+<tr><td>When espero a que cargue el listado de álbumes</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.9 s</td></tr>
+<tr><td>Then veo al menos un álbum con nombre y artista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.8 s</td></tr>
+            </tbody></table>
+          </div>
+          <div class="medios">
+            <figure><video controls preload="none" src="videos/HU01/hu01_ca01_1_ver_listado.mp4"></video><figcaption><a href="videos/HU01/hu01_ca01_1_ver_listado.mp4">Video del escenario</a></figcaption></figure>
+            <figure><a href="capturas/HU01/hu01_ca01_1_ver_listado.png"><img loading="lazy" src="capturas/HU01/hu01_ca01_1_ver_listado.png" alt="Pantalla final del escenario CA01.1 Ver el listado de álbumes"></a><figcaption>Pantalla final</figcaption></figure>
+          </div>
+        </div>
+      </details>
+
+      <details >
+        <summary><span class="pill ok">pasó</span> <strong>CA01.2 Ir al detalle de un álbum</strong>
+          <span class="meta">18.6 s · hu01_ca01_2_ir_al_detalle.feature</span></summary>
+        <div class="cuerpo">
+          <div class="pasos">
+            
+            <table><thead><tr><th>Paso</th><th>Resultado</th><th class="num">Duración</th></tr></thead><tbody>
+            <tr><td>Given abro la aplicación</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.2 s</td></tr>
+<tr><td>When espero a que cargue el listado de álbumes</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">2.0 s</td></tr>
+<tr><td>And toco el primer álbum de la lista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.9 s</td></tr>
+<tr><td>Then veo el detalle del álbum que toqué</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.2 s</td></tr>
+            </tbody></table>
+          </div>
+          <div class="medios">
+            <figure><video controls preload="none" src="videos/HU01/hu01_ca01_2_ir_al_detalle.mp4"></video><figcaption><a href="videos/HU01/hu01_ca01_2_ir_al_detalle.mp4">Video del escenario</a></figcaption></figure>
+            <figure><a href="capturas/HU01/hu01_ca01_2_ir_al_detalle.png"><img loading="lazy" src="capturas/HU01/hu01_ca01_2_ir_al_detalle.png" alt="Pantalla final del escenario CA01.2 Ir al detalle de un álbum"></a><figcaption>Pantalla final</figcaption></figure>
+          </div>
+        </div>
+      </details></section>
+<section id="HU02"><h2>HU02 Consultar la información detallada de un álbum</h2>
+      <details >
+        <summary><span class="pill ok">pasó</span> <strong>CA02.1 Ver la información del álbum</strong>
+          <span class="meta">21.0 s · hu02_ca02_1_informacion.feature</span></summary>
+        <div class="cuerpo">
+          <div class="pasos">
+            
+            <table><thead><tr><th>Paso</th><th>Resultado</th><th class="num">Duración</th></tr></thead><tbody>
+            <tr><td>Given abro la aplicación</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.2 s</td></tr>
+<tr><td>And espero a que cargue el listado de álbumes</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">2.2 s</td></tr>
+<tr><td>When toco el primer álbum de la lista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.9 s</td></tr>
+<tr><td>Then veo el detalle del álbum que toqué</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.2 s</td></tr>
+<tr><td>And veo el año de lanzamiento con cuatro dígitos</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.7 s</td></tr>
+<tr><td>And veo el género y el sello discográfico</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.8 s</td></tr>
+<tr><td>And veo la descripción del álbum</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.7 s</td></tr>
+            </tbody></table>
+          </div>
+          <div class="medios">
+            <figure><video controls preload="none" src="videos/HU02/hu02_ca02_1_informacion.mp4"></video><figcaption><a href="videos/HU02/hu02_ca02_1_informacion.mp4">Video del escenario</a></figcaption></figure>
+            <figure><a href="capturas/HU02/hu02_ca02_1_informacion.png"><img loading="lazy" src="capturas/HU02/hu02_ca02_1_informacion.png" alt="Pantalla final del escenario CA02.1 Ver la información del álbum"></a><figcaption>Pantalla final</figcaption></figure>
+          </div>
+        </div>
+      </details>
+
+      <details >
+        <summary><span class="pill ok">pasó</span> <strong>CA02.2 Ver los tracks del álbum</strong>
+          <span class="meta">19.6 s · hu02_ca02_2_tracks.feature</span></summary>
+        <div class="cuerpo">
+          <div class="pasos">
+            
+            <table><thead><tr><th>Paso</th><th>Resultado</th><th class="num">Duración</th></tr></thead><tbody>
+            <tr><td>Given abro la aplicación</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.3 s</td></tr>
+<tr><td>And espero a que cargue el listado de álbumes</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.9 s</td></tr>
+<tr><td>When toco el primer álbum de la lista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.9 s</td></tr>
+<tr><td>Then veo el detalle del álbum que toqué</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.2 s</td></tr>
+<tr><td>And veo la sección &quot;Tracks&quot; con nombre y duración de cada track</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.2 s</td></tr>
+            </tbody></table>
+          </div>
+          <div class="medios">
+            <figure><video controls preload="none" src="videos/HU02/hu02_ca02_2_tracks.mp4"></video><figcaption><a href="videos/HU02/hu02_ca02_2_tracks.mp4">Video del escenario</a></figcaption></figure>
+            <figure><a href="capturas/HU02/hu02_ca02_2_tracks.png"><img loading="lazy" src="capturas/HU02/hu02_ca02_2_tracks.png" alt="Pantalla final del escenario CA02.2 Ver los tracks del álbum"></a><figcaption>Pantalla final</figcaption></figure>
+          </div>
+        </div>
+      </details>
+
+      <details >
+        <summary><span class="pill ok">pasó</span> <strong>CA02.3 Ver los comentarios del álbum</strong>
+          <span class="meta">22.8 s · hu02_ca02_3_comentarios.feature</span></summary>
+        <div class="cuerpo">
+          <div class="pasos">
+            
+            <table><thead><tr><th>Paso</th><th>Resultado</th><th class="num">Duración</th></tr></thead><tbody>
+            <tr><td>Given abro la aplicación</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.2 s</td></tr>
+<tr><td>And espero a que cargue el listado de álbumes</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.9 s</td></tr>
+<tr><td>When toco el primer álbum de la lista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.5 s</td></tr>
+<tr><td>Then veo el detalle del álbum que toqué</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.2 s</td></tr>
+<tr><td>And veo la sección &quot;Comentarios&quot; con estrellas y texto de cada comentario</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">3.7 s</td></tr>
+            </tbody></table>
+          </div>
+          <div class="medios">
+            <figure><video controls preload="none" src="videos/HU02/hu02_ca02_3_comentarios.mp4"></video><figcaption><a href="videos/HU02/hu02_ca02_3_comentarios.mp4">Video del escenario</a></figcaption></figure>
+            <figure><a href="capturas/HU02/hu02_ca02_3_comentarios.png"><img loading="lazy" src="capturas/HU02/hu02_ca02_3_comentarios.png" alt="Pantalla final del escenario CA02.3 Ver los comentarios del álbum"></a><figcaption>Pantalla final</figcaption></figure>
+          </div>
+        </div>
+      </details>
+
+      <details >
+        <summary><span class="pill ok">pasó</span> <strong>CA02.5 Volver al listado con la flecha</strong>
+          <span class="meta">21.0 s · hu02_ca02_5_volver.feature</span></summary>
+        <div class="cuerpo">
+          <div class="pasos">
+            
+            <table><thead><tr><th>Paso</th><th>Resultado</th><th class="num">Duración</th></tr></thead><tbody>
+            <tr><td>Given abro la aplicación</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.3 s</td></tr>
+<tr><td>And espero a que cargue el listado de álbumes</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">2.5 s</td></tr>
+<tr><td>And toco el primer álbum de la lista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.0 s</td></tr>
+<tr><td>And veo el detalle del álbum que toqué</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.2 s</td></tr>
+<tr><td>When toco la flecha de volver</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.8 s</td></tr>
+<tr><td>Then veo el listado de álbumes</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.9 s</td></tr>
+            </tbody></table>
+          </div>
+          <div class="medios">
+            <figure><video controls preload="none" src="videos/HU02/hu02_ca02_5_volver.mp4"></video><figcaption><a href="videos/HU02/hu02_ca02_5_volver.mp4">Video del escenario</a></figcaption></figure>
+            <figure><a href="capturas/HU02/hu02_ca02_5_volver.png"><img loading="lazy" src="capturas/HU02/hu02_ca02_5_volver.png" alt="Pantalla final del escenario CA02.5 Volver al listado con la flecha"></a><figcaption>Pantalla final</figcaption></figure>
+          </div>
+        </div>
+      </details></section>
+<section id="HU05"><h2>HU05 Consultar el listado de coleccionistas</h2>
+      <details >
+        <summary><span class="pill ok">pasó</span> <strong>CA05.1 Ver el listado de coleccionistas</strong>
+          <span class="meta">19.2 s · hu05_ca05_1_ver_listado.feature</span></summary>
+        <div class="cuerpo">
+          <div class="pasos">
+            
+            <table><thead><tr><th>Paso</th><th>Resultado</th><th class="num">Duración</th></tr></thead><tbody>
+            <tr><td>Given abro la aplicación</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.3 s</td></tr>
+<tr><td>And espero a que cargue el listado de álbumes</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.9 s</td></tr>
+<tr><td>When voy a la sección de coleccionistas</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.9 s</td></tr>
+<tr><td>And espero a que cargue el listado de coleccionistas</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.3 s</td></tr>
+<tr><td>Then veo al menos un coleccionista con nombre y resumen de su colección</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.7 s</td></tr>
+            </tbody></table>
+          </div>
+          <div class="medios">
+            <figure><video controls preload="none" src="videos/HU05/hu05_ca05_1_ver_listado.mp4"></video><figcaption><a href="videos/HU05/hu05_ca05_1_ver_listado.mp4">Video del escenario</a></figcaption></figure>
+            <figure><a href="capturas/HU05/hu05_ca05_1_ver_listado.png"><img loading="lazy" src="capturas/HU05/hu05_ca05_1_ver_listado.png" alt="Pantalla final del escenario CA05.1 Ver el listado de coleccionistas"></a><figcaption>Pantalla final</figcaption></figure>
+          </div>
+        </div>
+      </details>
+
+      <details >
+        <summary><span class="pill ok">pasó</span> <strong>CA05.2 Ir al detalle de un coleccionista</strong>
+          <span class="meta">20.7 s · hu05_ca05_2_ir_al_detalle.feature</span></summary>
+        <div class="cuerpo">
+          <div class="pasos">
+            
+            <table><thead><tr><th>Paso</th><th>Resultado</th><th class="num">Duración</th></tr></thead><tbody>
+            <tr><td>Given abro la aplicación</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.3 s</td></tr>
+<tr><td>And espero a que cargue el listado de álbumes</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">2.0 s</td></tr>
+<tr><td>And voy a la sección de coleccionistas</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.9 s</td></tr>
+<tr><td>And espero a que cargue el listado de coleccionistas</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.2 s</td></tr>
+<tr><td>When toco el primer coleccionista de la lista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.9 s</td></tr>
+<tr><td>Then veo el detalle del coleccionista que toqué</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.1 s</td></tr>
+            </tbody></table>
+          </div>
+          <div class="medios">
+            <figure><video controls preload="none" src="videos/HU05/hu05_ca05_2_ir_al_detalle.mp4"></video><figcaption><a href="videos/HU05/hu05_ca05_2_ir_al_detalle.mp4">Video del escenario</a></figcaption></figure>
+            <figure><a href="capturas/HU05/hu05_ca05_2_ir_al_detalle.png"><img loading="lazy" src="capturas/HU05/hu05_ca05_2_ir_al_detalle.png" alt="Pantalla final del escenario CA05.2 Ir al detalle de un coleccionista"></a><figcaption>Pantalla final</figcaption></figure>
+          </div>
+        </div>
+      </details></section>
+<section id="HU06"><h2>HU06 Consultar la información detallada de un coleccionista</h2>
+      <details >
+        <summary><span class="pill ok">pasó</span> <strong>CA06.1 Ver la información del coleccionista</strong>
+          <span class="meta">22.3 s · hu06_ca06_1_informacion.feature</span></summary>
+        <div class="cuerpo">
+          <div class="pasos">
+            
+            <table><thead><tr><th>Paso</th><th>Resultado</th><th class="num">Duración</th></tr></thead><tbody>
+            <tr><td>Given abro la aplicación</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.8 s</td></tr>
+<tr><td>And espero a que cargue el listado de álbumes</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.8 s</td></tr>
+<tr><td>And voy a la sección de coleccionistas</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.0 s</td></tr>
+<tr><td>And espero a que cargue el listado de coleccionistas</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.1 s</td></tr>
+<tr><td>When toco el primer coleccionista de la lista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.9 s</td></tr>
+<tr><td>Then veo el detalle del coleccionista que toqué</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.1 s</td></tr>
+<tr><td>And veo el identificador del coleccionista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.6 s</td></tr>
+<tr><td>And veo las pestañas &quot;Álbumes&quot;, &quot;Artistas&quot; y &quot;Notas&quot;</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.8 s</td></tr>
+            </tbody></table>
+          </div>
+          <div class="medios">
+            <figure><video controls preload="none" src="videos/HU06/hu06_ca06_1_informacion.mp4"></video><figcaption><a href="videos/HU06/hu06_ca06_1_informacion.mp4">Video del escenario</a></figcaption></figure>
+            <figure><a href="capturas/HU06/hu06_ca06_1_informacion.png"><img loading="lazy" src="capturas/HU06/hu06_ca06_1_informacion.png" alt="Pantalla final del escenario CA06.1 Ver la información del coleccionista"></a><figcaption>Pantalla final</figcaption></figure>
+          </div>
+        </div>
+      </details>
+
+      <details >
+        <summary><span class="pill ok">pasó</span> <strong>CA06.2 Cambiar entre álbumes, artistas y notas</strong>
+          <span class="meta">24.0 s · hu06_ca06_2_pestanas.feature</span></summary>
+        <div class="cuerpo">
+          <div class="pasos">
+            
+            <table><thead><tr><th>Paso</th><th>Resultado</th><th class="num">Duración</th></tr></thead><tbody>
+            <tr><td>Given abro la aplicación</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.8 s</td></tr>
+<tr><td>And espero a que cargue el listado de álbumes</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.8 s</td></tr>
+<tr><td>And voy a la sección de coleccionistas</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.0 s</td></tr>
+<tr><td>And espero a que cargue el listado de coleccionistas</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.0 s</td></tr>
+<tr><td>And toco el primer coleccionista de la lista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.9 s</td></tr>
+<tr><td>And veo el detalle del coleccionista que toqué</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.1 s</td></tr>
+<tr><td>When abro la pestaña &quot;Artistas&quot;</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.9 s</td></tr>
+<tr><td>Then la pestaña &quot;Artistas&quot; queda seleccionada</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.6 s</td></tr>
+<tr><td>When abro la pestaña &quot;Notas&quot;</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.9 s</td></tr>
+<tr><td>Then la pestaña &quot;Notas&quot; queda seleccionada</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.6 s</td></tr>
+            </tbody></table>
+          </div>
+          <div class="medios">
+            <figure><video controls preload="none" src="videos/HU06/hu06_ca06_2_pestanas.mp4"></video><figcaption><a href="videos/HU06/hu06_ca06_2_pestanas.mp4">Video del escenario</a></figcaption></figure>
+            <figure><a href="capturas/HU06/hu06_ca06_2_pestanas.png"><img loading="lazy" src="capturas/HU06/hu06_ca06_2_pestanas.png" alt="Pantalla final del escenario CA06.2 Cambiar entre álbumes, artistas y notas"></a><figcaption>Pantalla final</figcaption></figure>
+          </div>
+        </div>
+      </details></section>
+<section id="HU09"><h2>HU09 Publicar un comentario sobre un álbum</h2>
+      <details >
+        <summary><span class="pill ok">pasó</span> <strong>CA09.1 El coleccionista publica un comentario</strong>
+          <span class="meta">29.9 s · hu09_ca09_1_publicar.feature</span></summary>
+        <div class="cuerpo">
+          <div class="pasos">
+            
+            <table><thead><tr><th>Paso</th><th>Resultado</th><th class="num">Duración</th></tr></thead><tbody>
+            <tr><td>Given entro a la aplicación como coleccionista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">5.0 s</td></tr>
+<tr><td>And espero a que cargue el listado de álbumes</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.7 s</td></tr>
+<tr><td>And toco el primer álbum de la lista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.9 s</td></tr>
+<tr><td>And veo el detalle del álbum que toqué</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.2 s</td></tr>
+<tr><td>And veo el formulario para comentar a mi nombre</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">4.0 s</td></tr>
+<tr><td>When escribo un comentario nuevo</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">2.4 s</td></tr>
+<tr><td>And toco el botón de publicar comentario</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.9 s</td></tr>
+<tr><td>Then el contador del comentario marca &quot;0 / 600&quot;</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.8 s</td></tr>
+<tr><td>And no veo el elemento &quot;commentErrorText&quot;</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.7 s</td></tr>
+            </tbody></table>
+          </div>
+          <div class="medios">
+            <figure><video controls preload="none" src="videos/HU09/hu09_ca09_1_publicar.mp4"></video><figcaption><a href="videos/HU09/hu09_ca09_1_publicar.mp4">Video del escenario</a></figcaption></figure>
+            <figure><a href="capturas/HU09/hu09_ca09_1_publicar.png"><img loading="lazy" src="capturas/HU09/hu09_ca09_1_publicar.png" alt="Pantalla final del escenario CA09.1 El coleccionista publica un comentario"></a><figcaption>Pantalla final</figcaption></figure>
+          </div>
+        </div>
+      </details>
+
+      <details >
+        <summary><span class="pill ok">pasó</span> <strong>CA09.2 No se publica un comentario sin descripción</strong>
+          <span class="meta">27.1 s · hu09_ca09_2_descripcion_vacia.feature</span></summary>
+        <div class="cuerpo">
+          <div class="pasos">
+            
+            <table><thead><tr><th>Paso</th><th>Resultado</th><th class="num">Duración</th></tr></thead><tbody>
+            <tr><td>Given entro a la aplicación como coleccionista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">5.1 s</td></tr>
+<tr><td>And espero a que cargue el listado de álbumes</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.6 s</td></tr>
+<tr><td>And toco el primer álbum de la lista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.0 s</td></tr>
+<tr><td>And veo el detalle del álbum que toqué</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.2 s</td></tr>
+<tr><td>When toco el botón de publicar comentario</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">5.2 s</td></tr>
+<tr><td>Then veo el error de comentario &quot;Escribe la descripción del comentario.&quot;</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.7 s</td></tr>
+            </tbody></table>
+          </div>
+          <div class="medios">
+            <figure><video controls preload="none" src="videos/HU09/hu09_ca09_2_descripcion_vacia.mp4"></video><figcaption><a href="videos/HU09/hu09_ca09_2_descripcion_vacia.mp4">Video del escenario</a></figcaption></figure>
+            <figure><a href="capturas/HU09/hu09_ca09_2_descripcion_vacia.png"><img loading="lazy" src="capturas/HU09/hu09_ca09_2_descripcion_vacia.png" alt="Pantalla final del escenario CA09.2 No se publica un comentario sin descripción"></a><figcaption>Pantalla final</figcaption></figure>
+          </div>
+        </div>
+      </details>
+
+      <details >
+        <summary><span class="pill ok">pasó</span> <strong>CA09.3 El visitante no puede comentar</strong>
+          <span class="meta">24.9 s · hu09_ca09_3_visitante.feature</span></summary>
+        <div class="cuerpo">
+          <div class="pasos">
+            
+            <table><thead><tr><th>Paso</th><th>Resultado</th><th class="num">Duración</th></tr></thead><tbody>
+            <tr><td>Given entro a la aplicación como visitante</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.3 s</td></tr>
+<tr><td>And espero a que cargue el listado de álbumes</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.9 s</td></tr>
+<tr><td>When toco el primer álbum de la lista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.9 s</td></tr>
+<tr><td>Then veo el detalle del álbum que toqué</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.4 s</td></tr>
+<tr><td>And no veo el formulario para comentar</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">6.0 s</td></tr>
+            </tbody></table>
+          </div>
+          <div class="medios">
+            <figure><video controls preload="none" src="videos/HU09/hu09_ca09_3_visitante.mp4"></video><figcaption><a href="videos/HU09/hu09_ca09_3_visitante.mp4">Video del escenario</a></figcaption></figure>
+            <figure><a href="capturas/HU09/hu09_ca09_3_visitante.png"><img loading="lazy" src="capturas/HU09/hu09_ca09_3_visitante.png" alt="Pantalla final del escenario CA09.3 El visitante no puede comentar"></a><figcaption>Pantalla final</figcaption></figure>
+          </div>
+        </div>
+      </details>
+
+      <details >
+        <summary><span class="pill ok">pasó</span> <strong>CA09.4 Cancelar limpia el formulario</strong>
+          <span class="meta">29.0 s · hu09_ca09_4_cancelar.feature</span></summary>
+        <div class="cuerpo">
+          <div class="pasos">
+            
+            <table><thead><tr><th>Paso</th><th>Resultado</th><th class="num">Duración</th></tr></thead><tbody>
+            <tr><td>Given entro a la aplicación como coleccionista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">3.1 s</td></tr>
+<tr><td>And espero a que cargue el listado de álbumes</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.9 s</td></tr>
+<tr><td>And toco el primer álbum de la lista</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.0 s</td></tr>
+<tr><td>And veo el detalle del álbum que toqué</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">1.2 s</td></tr>
+<tr><td>When escribo un comentario nuevo</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">6.2 s</td></tr>
+<tr><td>Then el contador del comentario ya no está en cero</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.7 s</td></tr>
+<tr><td>When toco el botón de cancelar comentario</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.8 s</td></tr>
+<tr><td>Then el contador del comentario marca &quot;0 / 600&quot;</td>
+              <td><span class="pill ok">pasó</span></td><td class="num">0.7 s</td></tr>
+            </tbody></table>
+          </div>
+          <div class="medios">
+            <figure><video controls preload="none" src="videos/HU09/hu09_ca09_4_cancelar.mp4"></video><figcaption><a href="videos/HU09/hu09_ca09_4_cancelar.mp4">Video del escenario</a></figcaption></figure>
+            <figure><a href="capturas/HU09/hu09_ca09_4_cancelar.png"><img loading="lazy" src="capturas/HU09/hu09_ca09_4_cancelar.png" alt="Pantalla final del escenario CA09.4 Cancelar limpia el formulario"></a><figcaption>Pantalla final</figcaption></figure>
+          </div>
+        </div>
+      </details></section>
+  
+    <section id="apartados"><h2>Escenarios apartados por defectos conocidos</h2>
+    <p>Estos escenarios no hacen parte de la corrida: fallan mientras exista el defecto que detectan. Se reactivan como pruebas de regresión cuando el defecto se corrija.</p>
+    <table><thead><tr><th>Escenario</th><th>Motivo</th><th>Archivo</th></tr></thead><tbody>
+    <tr><td>CA09.1b El comentario publicado aparece en la lista</td><td>DEFECTO CONOCIDO (issue #86: https://github.com/jpmendeza2401/MISW-Software-aplicaciones-moviles/issues/86): la app muestra «Comentario publicado» pero el comentario nuevo no se ve en la lista del detalle del álbum. Detectado por este escenario el 15/11/2026 en Honor NAA-LX3 (Android 15) y confirmado manualmente. Este escenario FALLA mientras el defecto exista; por eso está en pendientes/ (.txt). Al corregirse, moverlo a features/ como .feature: queda como prueba de regresión.</td><td><code>pendientes/hu09_comentario_no_aparece_bug.feature.txt</code></td></tr>
+<tr><td>CA09.5 La caja de comentario sigue visible con el teclado abierto</td><td>DEFECTO CONOCIDO (issue #87: https://github.com/jpmendeza2401/MISW-Software-aplicaciones-moviles/issues/87): en dispositivo físico, al abrir el teclado el formulario queda reducido a una franja y la caja de texto deja de verse. Este escenario FALLA mientras el defecto exista; por eso está en pendientes/ (.txt) y no se ejecuta con la suite. Activarlo (mover a features/ como .feature) cuando el defecto se corrija, para que quede como prueba de regresión. Requiere agregar el paso «toco la caja de descripción del comentario» (clic sin cerrar teclado).</td><td><code>pendientes/hu09_teclado_bug.feature.txt</code></td></tr>
+    </tbody></table></section>
+  <p class="meta" style="margin:40px 0 0">Generado por <code>e2e-kraken/scripts/evidencias.js</code>. Los videos y capturas están en las carpetas <code>videos/</code> y <code>capturas/</code> junto a este archivo.</p>
+</main></body></html>

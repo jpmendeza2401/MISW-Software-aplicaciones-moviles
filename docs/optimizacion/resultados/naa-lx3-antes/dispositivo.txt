@@ -1,0 +1,3 @@
+NAA-LX3
+15
+MemTotal:        3887584 kB
