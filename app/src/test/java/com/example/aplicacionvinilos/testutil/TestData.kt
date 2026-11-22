@@ -3,6 +3,8 @@ package com.example.aplicacionvinilos.testutil
 import com.example.aplicacionvinilos.data.model.Album
 import com.example.aplicacionvinilos.data.model.AlbumRequest
 import com.example.aplicacionvinilos.data.model.Band
+import com.example.aplicacionvinilos.data.model.CollectorAlbum
+import com.example.aplicacionvinilos.data.model.CollectorAlbumRequest
 import com.example.aplicacionvinilos.data.model.Comment
 import com.example.aplicacionvinilos.data.model.CommentRequest
 import com.example.aplicacionvinilos.data.model.Performer
@@ -44,6 +46,47 @@ class FakeApiService(private val block: suspend () -> List<Album>) : ApiService 
 
     override suspend fun getCollector(collectorId: Int): com.example.aplicacionvinilos.data.model.Collector =
         throw UnsupportedOperationException()
+
+    override suspend fun addAlbumToCollector(
+        collectorId: Int,
+        albumId: Int,
+        body: CollectorAlbumRequest
+    ): CollectorAlbum = throw UnsupportedOperationException()
+}
+
+/** Fake de ApiService (HU11): [onAssociate] responde a POST /collectors/{cid}/albums/{aid}. */
+class FakeCollectorApiService(
+    private val onAssociate: suspend (Int, Int, CollectorAlbumRequest) -> CollectorAlbum = { _, _, b ->
+        CollectorAlbum(1, b.price, b.status)
+    }
+) : ApiService {
+    var associateCalls = 0
+    var postedCollectorId: Int? = null
+    var postedAlbumId: Int? = null
+    var postedBody: CollectorAlbumRequest? = null
+
+    override suspend fun getAlbumBand(albumId: Int, bandId: Int): Band =
+        throw UnsupportedOperationException()
+
+    override suspend fun getAlbums(): List<Album> = throw UnsupportedOperationException()
+
+    override suspend fun getCollectors(): List<com.example.aplicacionvinilos.data.model.Collector> =
+        throw UnsupportedOperationException()
+
+    override suspend fun getCollector(collectorId: Int): com.example.aplicacionvinilos.data.model.Collector =
+        throw UnsupportedOperationException()
+
+    override suspend fun addAlbumToCollector(
+        collectorId: Int,
+        albumId: Int,
+        body: CollectorAlbumRequest
+    ): CollectorAlbum {
+        associateCalls++
+        postedCollectorId = collectorId
+        postedAlbumId = albumId
+        postedBody = body
+        return onAssociate(collectorId, albumId, body)
+    }
 }
 
 /** Fake de AlbumService (HU02, HU07 y HU09). [onComment] y [onCreate] responden a los POST. */

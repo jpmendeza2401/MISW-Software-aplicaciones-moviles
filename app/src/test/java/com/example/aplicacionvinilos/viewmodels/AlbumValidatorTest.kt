@@ -64,6 +64,17 @@ class AlbumValidatorTest {
     }
 
     @Test
+    fun `asociacion exige precio entero mayor que 0 y estado permitido`() {
+        assertNull(AlbumValidator.validateAssociation("25000", "Active"))
+        assertNull(AlbumValidator.validateAssociation(" 1 ", "Inactive"))
+        listOf("", "0", "-5", "abc", "10.5").forEach {
+            assertEquals(AlbumValidator.Error.INVALID_PRICE, AlbumValidator.validateAssociation(it, "Active"))
+        }
+        assertEquals(AlbumValidator.Error.INVALID_STATUS, AlbumValidator.validateAssociation("100", ""))
+        assertEquals(AlbumValidator.Error.INVALID_STATUS, AlbumValidator.validateAssociation("100", "Sold"))
+    }
+
+    @Test
     fun `solo se aceptan los sellos permitidos`() {
         listOf("Sony Music", "EMI", "Discos Fuentes", "Elektra", "Fania Records")
             .forEach { assertNull(validate(label = it)) }
