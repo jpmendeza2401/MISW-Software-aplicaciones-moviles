@@ -1,5 +1,6 @@
 package com.example.aplicacionvinilos.viewmodels
 
+import com.example.aplicacionvinilos.data.model.AlbumStatus
 import com.example.aplicacionvinilos.data.model.Genre
 import com.example.aplicacionvinilos.data.model.RecordLabel
 
@@ -9,7 +10,8 @@ object AlbumValidator {
     const val MIN_NAME_LENGTH = 3
 
     enum class Error {
-        INVALID_NAME, INVALID_COVER, INVALID_DATE, EMPTY_DESCRIPTION, INVALID_GENRE, INVALID_LABEL
+        INVALID_NAME, INVALID_COVER, INVALID_DATE, EMPTY_DESCRIPTION, INVALID_GENRE, INVALID_LABEL,
+        INVALID_PRICE, INVALID_STATUS
     }
 
     private val URL_REGEX = Regex("""^https?://[^\s/${'$'}.?#][^\s]*$""", RegexOption.IGNORE_CASE)
@@ -31,6 +33,13 @@ object AlbumValidator {
         description.isBlank() -> Error.EMPTY_DESCRIPTION
         Genre.labels.none { it == genre } -> Error.INVALID_GENRE
         RecordLabel.labels.none { it == recordLabel } -> Error.INVALID_LABEL
+        else -> null
+    }
+
+    /** HU11: precio entero mayor que 0 y estado permitido. Devuelve null si es válido. */
+    fun validateAssociation(price: String, status: String): Error? = when {
+        (price.trim().toIntOrNull() ?: 0) <= 0 -> Error.INVALID_PRICE
+        AlbumStatus.labels.none { it == status } -> Error.INVALID_STATUS
         else -> null
     }
 

@@ -178,6 +178,70 @@
                 android:textColorHint="@color/groove_text_subtle"
                 android:textSize="14sp" />
 
+            <!-- HU11: asociar el álbum al coleccionista con precio y estado -->
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/associateSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:checked="true"
+                android:text="@string/crear_album_asociar"
+                android:textColor="@color/groove_text_primary" />
+
+            <LinearLayout
+                android:id="@+id/associateGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Groove.Text.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:labelFor="@id/priceInput"
+                    android:text="@string/crear_album_precio" />
+
+                <EditText
+                    android:id="@+id/priceInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:autofillHints=""
+                    android:background="@drawable/bg_input"
+                    android:hint="@string/crear_album_precio_hint"
+                    android:inputType="number"
+                    android:maxLength="9"
+                    android:maxLines="1"
+                    android:padding="14dp"
+                    android:textColor="@color/groove_text_primary"
+                    android:textColorHint="@color/groove_text_subtle"
+                    android:textSize="14sp" />
+
+                <TextView
+                    style="@style/Groove.Text.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:labelFor="@id/statusInput"
+                    android:text="@string/crear_album_estado" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/statusInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_input"
+                    android:completionThreshold="0"
+                    android:cursorVisible="false"
+                    android:hint="@string/crear_album_estado_hint"
+                    android:inputType="none"
+                    android:padding="14dp"
+                    android:textColor="@color/groove_text_primary"
+                    android:textColorHint="@color/groove_text_subtle"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/errorText"
                 android:layout_width="match_parent"
