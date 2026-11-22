@@ -16,8 +16,10 @@ import androidx.core.widget.doAfterTextChanged
 import com.bumptech.glide.Glide
 import com.example.aplicacionvinilos.R
 import com.example.aplicacionvinilos.data.model.Album
+import com.example.aplicacionvinilos.data.model.AlbumStatus
 import com.example.aplicacionvinilos.data.model.Genre
 import com.example.aplicacionvinilos.data.model.RecordLabel
+import com.example.aplicacionvinilos.data.session.CollectorSession
 import com.example.aplicacionvinilos.databinding.ActivityCreateAlbumBinding
 import com.example.aplicacionvinilos.viewmodels.AlbumValidator
 import com.example.aplicacionvinilos.viewmodels.CreateAlbumViewModel
@@ -56,8 +58,11 @@ class CreateAlbumActivity : AppCompatActivity() {
         setupDropdowns()
         setupDatePicker()
         setupCoverPreview()
-        listOf(binding.nameInput, binding.descriptionInput, binding.genreInput, binding.labelInput)
-            .forEach { it.doAfterTextChanged { viewModel.onFormChanged() } }
+        setupAssociation()
+        listOf(
+            binding.nameInput, binding.descriptionInput, binding.genreInput, binding.labelInput,
+            binding.priceInput, binding.statusInput
+        ).forEach { it.doAfterTextChanged { viewModel.onFormChanged() } }
 
         binding.saveButton.setOnClickListener {
             hideKeyboard()
@@ -67,7 +72,8 @@ class CreateAlbumActivity : AppCompatActivity() {
                 releaseDate = releaseDate,
                 description = binding.descriptionInput.text.toString(),
                 genre = binding.genreInput.text.toString(),
-                recordLabel = binding.labelInput.text.toString()
+                recordLabel = binding.labelInput.text.toString(),
+                association = association()
             )
         }
 
@@ -94,8 +100,32 @@ class CreateAlbumActivity : AppCompatActivity() {
         binding.labelInput.setAdapter(
             ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, RecordLabel.labels)
         )
+        binding.statusInput.setAdapter(
+            ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, AlbumStatus.labels)
+        )
         binding.genreInput.setOnClickListener { binding.genreInput.showDropDown() }
         binding.labelInput.setOnClickListener { binding.labelInput.showDropDown() }
+        binding.statusInput.setOnClickListener { binding.statusInput.showDropDown() }
+    }
+
+    // HU11: precio y estado solo se piden si el usuario quiere agregar el álbum a su colección.
+    private fun setupAssociation() {
+        binding.associateSwitch.setOnCheckedChangeListener { _, checked ->
+            binding.associateGroup.visibility = if (checked) View.VISIBLE else View.GONE
+            viewModel.onFormChanged()
+        }
+        binding.associateGroup.visibility =
+            if (binding.associateSwitch.isChecked) View.VISIBLE else View.GONE
+    }
+
+    private fun association(): CreateAlbumViewModel.Association? {
+        val user = CollectorSession.current
+        if (user == null || !binding.associateSwitch.isChecked) return null
+        return CreateAlbumViewModel.Association(
+            user.id_usuario,
+            binding.priceInput.text.toString(),
+            binding.statusInput.text.toString()
+        )
     }
 
     private fun setupDatePicker() {
@@ -160,6 +190,8 @@ class CreateAlbumActivity : AppCompatActivity() {
             AlbumValidator.Error.EMPTY_DESCRIPTION -> getString(R.string.crear_album_error_descripcion)
             AlbumValidator.Error.INVALID_GENRE -> getString(R.string.crear_album_error_genero)
             AlbumValidator.Error.INVALID_LABEL -> getString(R.string.crear_album_error_sello)
+            AlbumValidator.Error.INVALID_PRICE -> getString(R.string.crear_album_error_precio)
+            AlbumValidator.Error.INVALID_STATUS -> getString(R.string.crear_album_error_estado)
         }
         binding.errorText.visibility = View.VISIBLE
     }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- HU11: asociar el álbum creado al coleccionista -->
+    <string name="crear_album_asociar">Agregar a mi colección</string>
+    <string name="crear_album_precio">Precio *</string>
+    <string name="crear_album_precio_hint">Ej. 25000</string>
+    <string name="crear_album_estado">Estado *</string>
+    <string name="crear_album_estado_hint">Selecciona un estado</string>
+    <string name="crear_album_error_precio">Ingresa un precio entero mayor que 0.</string>
+    <string name="crear_album_error_estado">Selecciona un estado de la lista.</string>
+</resources>
