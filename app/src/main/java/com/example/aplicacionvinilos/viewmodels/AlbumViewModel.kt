@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.aplicacionvinilos.data.model.Album
 import com.example.aplicacionvinilos.data.model.Comment
+import com.example.aplicacionvinilos.data.model.Track
 import com.example.aplicacionvinilos.data.repository.AlbumRepository
 import kotlinx.coroutines.launch
 
@@ -23,6 +24,13 @@ class AlbumViewModel(
     // HU09: error de validación del formulario (null = sin error).
     private val _validationError = MutableLiveData<CommentValidator.Error?>(null)
     val validationError: LiveData<CommentValidator.Error?> = _validationError
+
+    // HU08: estado del alta de track (Idle → Loading → Success / Error) y error de validación.
+    private val _trackState = MutableLiveData<UiState<Track>>(UiState.Idle)
+    val trackState: LiveData<UiState<Track>> = _trackState
+
+    private val _trackError = MutableLiveData<TrackValidator.Error?>(null)
+    val trackError: LiveData<TrackValidator.Error?> = _trackError
 
     fun loadAlbum(albumId: Int) {
         _album.value = UiState.Loading
@@ -56,6 +64,30 @@ class AlbumViewModel(
                 }
                 .onFailure { _commentState.value = UiState.Error(it.message ?: "Error desconocido") }
         }
+    }
+
+    /** HU08: valida y agrega el track; al éxito recarga el álbum para mostrarlo en la lista. */
+    fun addTrack(albumId: Int, name: String, duration: String) {
+        if (_trackState.value is UiState.Loading) return // evita doble envío
+
+        val error = TrackValidator.validate(name, duration)
+        _trackError.value = error
+        if (error != null) return
+
+        _trackState.value = UiState.Loading
+        viewModelScope.launch {
+            repository.addTrack(albumId, name.trim(), duration.trim())
+                .onSuccess {
+                    _trackState.value = UiState.Success(it)
+                    refreshAlbum(albumId)
+                }
+                .onFailure { _trackState.value = UiState.Error(it.message ?: "Error desconocido") }
+        }
+    }
+
+    fun clearTrackForm() {
+        _trackError.value = null
+        _trackState.value = UiState.Idle
     }
 
     fun clearCommentForm() {

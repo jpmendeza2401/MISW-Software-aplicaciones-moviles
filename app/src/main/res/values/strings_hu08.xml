@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- HU08: asociar un track a un álbum -->
+    <string name="add_track_title">Agregar un track</string>
+    <string name="add_track_name_label">Nombre *</string>
+    <string name="add_track_duration_label">Duración (m:ss) *</string>
+    <string name="add_track_duration_hint">Ej. 5:05</string>
+    <string name="add_track_save">Agregar track</string>
+    <string name="add_track_saving">Guardando…</string>
+    <string name="add_track_success">Track agregado</string>
+    <string name="add_track_error">No fue posible agregar el track: %1$s</string>
+    <string name="add_track_error_name">El nombre debe tener al menos %1$d caracteres.</string>
+    <string name="add_track_error_format">La duración debe tener el formato m:ss, por ejemplo 5:05.</string>
+    <string name="add_track_error_short">La duración mínima es 1 minuto (1:00).</string>
+</resources>

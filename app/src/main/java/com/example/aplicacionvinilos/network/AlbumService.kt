@@ -3,6 +3,8 @@ package com.example.aplicacionvinilos.network
 import com.example.aplicacionvinilos.data.model.Album
 import com.example.aplicacionvinilos.data.model.Comment
 import com.example.aplicacionvinilos.data.model.CommentRequest
+import com.example.aplicacionvinilos.data.model.Track
+import com.example.aplicacionvinilos.data.model.TrackRequest
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -19,4 +21,11 @@ interface AlbumService {
         @Path("albumId") albumId: Int,
         @Body comment: CommentRequest
     ): Comment
+
+    // HU08: asociar un track a un álbum.
+    @POST("albums/{albumId}/tracks")
+    suspend fun addTrack(
+        @Path("albumId") albumId: Int,
+        @Body track: TrackRequest
+    ): Track
 }

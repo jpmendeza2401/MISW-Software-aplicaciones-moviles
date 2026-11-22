@@ -17,12 +17,14 @@ import com.bumptech.glide.Glide
 import com.example.aplicacionvinilos.R
 import com.example.aplicacionvinilos.data.model.Album
 import com.example.aplicacionvinilos.data.model.Comment
+import com.example.aplicacionvinilos.data.model.Track
 import com.example.aplicacionvinilos.data.session.CollectorSession
 import com.example.aplicacionvinilos.databinding.ActivityAlbumDetailBinding
 import com.example.aplicacionvinilos.ui.adapters.CommentAdapter
 import com.example.aplicacionvinilos.ui.adapters.TrackAdapter
 import com.example.aplicacionvinilos.viewmodels.AlbumViewModel
 import com.example.aplicacionvinilos.viewmodels.CommentValidator
+import com.example.aplicacionvinilos.viewmodels.TrackValidator
 import com.example.aplicacionvinilos.viewmodels.UiState
 
 class AlbumDetailActivity : AppCompatActivity() {
@@ -57,6 +59,7 @@ class AlbumDetailActivity : AppCompatActivity() {
         binding.commentsList.adapter = commentAdapter
         viewModel.album.observe(this) { render(it) }
         setupAddCommentSection()
+        setupAddTrackSection()
 
         albumId = intent.getIntExtra(EXTRA_ALBUM_ID, INVALID_ID)
         if (albumId == INVALID_ID) {
@@ -135,6 +138,65 @@ class AlbumDetailActivity : AppCompatActivity() {
 
         viewModel.validationError.observe(this) { showValidationError(it) }
         viewModel.commentState.observe(this) { renderCommentState(it) }
+    }
+
+    // HU08: agregar tracks solo con coleccionista en sesión; el invitado no ve el formulario.
+    private fun setupAddTrackSection() {
+        if (CollectorSession.current == null) {
+            binding.addTrackSection.visibility = View.GONE
+            return
+        }
+        binding.addTrackSection.visibility = View.VISIBLE
+        listOf(binding.trackNameInput, binding.trackDurationInput).forEach {
+            it.doAfterTextChanged { binding.trackErrorText.visibility = View.GONE }
+        }
+        binding.addTrackButton.setOnClickListener {
+            hideKeyboard()
+            viewModel.addTrack(
+                albumId = albumId,
+                name = binding.trackNameInput.text.toString(),
+                duration = binding.trackDurationInput.text.toString()
+            )
+        }
+        viewModel.trackError.observe(this) { showTrackError(it) }
+        viewModel.trackState.observe(this) { renderTrackState(it) }
+    }
+
+    private fun renderTrackState(state: UiState<Track>) {
+        val loading = state is UiState.Loading
+        binding.addTrackButton.isEnabled = !loading
+        binding.trackNameInput.isEnabled = !loading
+        binding.trackDurationInput.isEnabled = !loading
+        binding.addTrackButton.setText(
+            if (loading) R.string.add_track_saving else R.string.add_track_save
+        )
+        when (state) {
+            is UiState.Success -> {
+                Toast.makeText(this, R.string.add_track_success, Toast.LENGTH_SHORT).show()
+                binding.trackNameInput.text?.clear()
+                binding.trackDurationInput.text?.clear()
+                viewModel.clearTrackForm()
+            }
+            is UiState.Error -> {
+                binding.trackErrorText.text = getString(R.string.add_track_error, state.message)
+                binding.trackErrorText.visibility = View.VISIBLE
+            }
+            else -> Unit
+        }
+    }
+
+    private fun showTrackError(error: TrackValidator.Error?) {
+        if (error == null) {
+            binding.trackErrorText.visibility = View.GONE
+            return
+        }
+        binding.trackErrorText.text = when (error) {
+            TrackValidator.Error.INVALID_NAME ->
+                getString(R.string.add_track_error_name, TrackValidator.MIN_NAME_LENGTH)
+            TrackValidator.Error.INVALID_DURATION_FORMAT -> getString(R.string.add_track_error_format)
+            TrackValidator.Error.DURATION_TOO_SHORT -> getString(R.string.add_track_error_short)
+        }
+        binding.trackErrorText.visibility = View.VISIBLE
     }
 
     private fun renderCommentState(state: UiState<Comment>) {
