@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.CreateAlbumActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/groove_canvas"
+        app:navigationContentDescription="@string/volver"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/crear_album"
+        app:titleTextAppearance="@style/Groove.Text.Section"
+        app:titleTextColor="@color/groove_text_primary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/groove_hairline" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/coverPreview"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_cover_placeholder"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                style="@style/Groove.Text.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/nameInput"
+                android:text="@string/crear_album_nombre" />
+
+            <EditText
+                android:id="@+id/nameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:autofillHints=""
+                android:background="@drawable/bg_input"
+                android:inputType="textCapWords"
+                android:maxLines="1"
+                android:padding="14dp"
+                android:textColor="@color/groove_text_primary"
+                android:textSize="14sp" />
+
+            <TextView
+                style="@style/Groove.Text.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/coverInput"
+                android:text="@string/crear_album_portada" />
+
+            <EditText
+                android:id="@+id/coverInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:autofillHints=""
+                android:background="@drawable/bg_input"
+                android:inputType="textUri"
+                android:maxLines="1"
+                android:padding="14dp"
+                android:textColor="@color/groove_text_primary"
+                android:textSize="14sp" />
+
+            <TextView
+                style="@style/Groove.Text.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/dateInput"
+                android:text="@string/crear_album_fecha" />
+
+            <EditText
+                android:id="@+id/dateInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:autofillHints=""
+                android:background="@drawable/bg_input"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:hint="@string/crear_album_fecha_hint"
+                android:inputType="none"
+                android:padding="14dp"
+                android:textColor="@color/groove_text_primary"
+                android:textColorHint="@color/groove_text_subtle"
+                android:textSize="14sp" />
+
+            <TextView
+                style="@style/Groove.Text.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/descriptionInput"
+                android:text="@string/crear_album_descripcion" />
+
+            <EditText
+                android:id="@+id/descriptionInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:autofillHints=""
+                android:background="@drawable/bg_input"
+                android:gravity="top|start"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="4"
+                android:padding="14dp"
+                android:textColor="@color/groove_text_primary"
+                android:textSize="14sp" />
+
+            <TextView
+                style="@style/Groove.Text.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/genreInput"
+                android:text="@string/crear_album_genero" />
+
+            <AutoCompleteTextView
+                android:id="@+id/genreInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input"
+                android:completionThreshold="0"
+                android:cursorVisible="false"
+                android:hint="@string/crear_album_genero_hint"
+                android:inputType="none"
+                android:padding="14dp"
+                android:textColor="@color/groove_text_primary"
+                android:textColorHint="@color/groove_text_subtle"
+                android:textSize="14sp" />
+
+            <TextView
+                style="@style/Groove.Text.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/labelInput"
+                android:text="@string/crear_album_sello" />
+
+            <AutoCompleteTextView
+                android:id="@+id/labelInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input"
+                android:completionThreshold="0"
+                android:cursorVisible="false"
+                android:hint="@string/crear_album_sello_hint"
+                android:inputType="none"
+                android:padding="14dp"
+                android:textColor="@color/groove_text_primary"
+                android:textColorHint="@color/groove_text_subtle"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/errorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="#FF8A80"
+                android:textSize="13sp"
+                android:visibility="gone"
+                tools:text="El nombre debe tener al menos 3 caracteres."
+                tools:visibility="visible" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saveButton"
+                style="@style/Groove.Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/crear_album_boton" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
