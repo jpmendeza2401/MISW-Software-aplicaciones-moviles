@@ -47,6 +47,13 @@
             android:windowSoftInputMode="adjustResize"
             android:theme="@style/Theme.AplicacionVinilos.Groove" />
 
+        <!-- HU07: crear álbum -->
+        <activity
+            android:name=".ui.CreateAlbumActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.AplicacionVinilos.Groove" />
+
         <!-- HU05: listado de coleccionistas -->
         <activity
             android:name=".ui.CollectorListActivity"

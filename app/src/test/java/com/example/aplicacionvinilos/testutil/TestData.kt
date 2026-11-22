@@ -1,6 +1,7 @@
 package com.example.aplicacionvinilos.testutil
 
 import com.example.aplicacionvinilos.data.model.Album
+import com.example.aplicacionvinilos.data.model.AlbumRequest
 import com.example.aplicacionvinilos.data.model.Band
 import com.example.aplicacionvinilos.data.model.Comment
 import com.example.aplicacionvinilos.data.model.CommentRequest
@@ -45,15 +46,19 @@ class FakeApiService(private val block: suspend () -> List<Album>) : ApiService 
         throw UnsupportedOperationException()
 }
 
-/** Fake de AlbumService (HU02 y HU09). [onComment] responde a POST /albums/{id}/comments. */
+/** Fake de AlbumService (HU02, HU07 y HU09). [onComment] y [onCreate] responden a los POST. */
 class FakeAlbumService(
     private val onComment: suspend (Int, CommentRequest) -> Comment = { _, req ->
         Comment(99, req.description, req.rating)
+    },
+    private val onCreate: suspend (AlbumRequest) -> Album = { req ->
+        album(100, req.name)
     },
     private val block: suspend (Int) -> Album
 ) : AlbumService {
     var postedAlbumId: Int? = null
     var postedComment: CommentRequest? = null
+    var postedAlbum: AlbumRequest? = null
 
     override suspend fun getAlbum(albumId: Int): Album = block(albumId)
 
@@ -61,5 +66,10 @@ class FakeAlbumService(
         postedAlbumId = albumId
         postedComment = comment
         return onComment(albumId, comment)
+    }
+
+    override suspend fun createAlbum(album: AlbumRequest): Album {
+        postedAlbum = album
+        return onCreate(album)
     }
 }

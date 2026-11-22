@@ -1,6 +1,7 @@
 package com.example.aplicacionvinilos.network
 
 import com.example.aplicacionvinilos.data.model.Album
+import com.example.aplicacionvinilos.data.model.AlbumRequest
 import com.example.aplicacionvinilos.data.model.Comment
 import com.example.aplicacionvinilos.data.model.CommentRequest
 
@@ -16,6 +17,10 @@ class AlbumServiceAdapter(
     // HU09: POST /albums/{albumId}/comments. Devuelve el comentario creado.
     suspend fun addComment(albumId: Int, comment: CommentRequest): Result<Comment> =
         ApiCall.execute(TAG) { albumService.addComment(albumId, comment) }
+
+    // HU07: POST /albums. Devuelve el álbum creado.
+    suspend fun createAlbum(album: AlbumRequest): Result<Album> =
+        ApiCall.execute(TAG) { albumService.createAlbum(album) }
 
     private companion object {
         const val TAG = "AlbumServiceAdapter"
