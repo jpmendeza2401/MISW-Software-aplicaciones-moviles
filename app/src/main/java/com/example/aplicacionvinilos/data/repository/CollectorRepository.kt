@@ -1,6 +1,8 @@
 package com.example.aplicacionvinilos.data.repository
 
 import com.example.aplicacionvinilos.data.model.Collector
+import com.example.aplicacionvinilos.data.model.CollectorAlbum
+import com.example.aplicacionvinilos.data.model.CollectorAlbumRequest
 import com.example.aplicacionvinilos.data.session.CollectorSession
 import com.example.aplicacionvinilos.network.ApiService
 import com.example.aplicacionvinilos.network.CollectorServiceAdapter
@@ -23,6 +25,15 @@ class CollectorRepository(
 
     suspend fun getCollector(collectorId: Int): Result<Collector> =
         adapter.getCollector(collectorId)
+
+    // HU11: asociar un álbum al coleccionista con su precio y estado.
+    suspend fun addAlbumToCollector(
+        collectorId: Int,
+        albumId: Int,
+        price: Int,
+        status: String
+    ): Result<CollectorAlbum> =
+        adapter.addAlbumToCollector(collectorId, albumId, CollectorAlbumRequest(price, status))
 
     // Login simulado: no existe endpoint, se busca el correo en GET /collectors.
     // Desempate: si hay varios con el mismo correo, gana el de id más grande.

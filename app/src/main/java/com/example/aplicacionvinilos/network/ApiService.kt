@@ -3,7 +3,11 @@ package com.example.aplicacionvinilos.network
 import com.example.aplicacionvinilos.data.model.Album
 import com.example.aplicacionvinilos.data.model.Band
 import com.example.aplicacionvinilos.data.model.Collector
+import com.example.aplicacionvinilos.data.model.CollectorAlbum
+import com.example.aplicacionvinilos.data.model.CollectorAlbumRequest
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface ApiService {
@@ -25,4 +29,12 @@ interface ApiService {
     suspend fun getCollector(
         @Path("collectorId") collectorId: Int
     ): Collector
+
+    // HU11: asociar un álbum existente a un coleccionista con su precio y estado.
+    @POST("collectors/{collectorId}/albums/{albumId}")
+    suspend fun addAlbumToCollector(
+        @Path("collectorId") collectorId: Int,
+        @Path("albumId") albumId: Int,
+        @Body body: CollectorAlbumRequest
+    ): CollectorAlbum
 }
