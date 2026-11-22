@@ -9,6 +9,7 @@ import com.example.aplicacionvinilos.data.model.Comment
 import com.example.aplicacionvinilos.data.model.CommentRequest
 import com.example.aplicacionvinilos.data.model.Performer
 import com.example.aplicacionvinilos.data.model.Track
+import com.example.aplicacionvinilos.data.model.TrackRequest
 import com.example.aplicacionvinilos.network.AlbumService
 import com.example.aplicacionvinilos.network.ApiService
 
@@ -89,10 +90,13 @@ class FakeCollectorApiService(
     }
 }
 
-/** Fake de AlbumService (HU02, HU07 y HU09). [onComment] y [onCreate] responden a los POST. */
+/** Fake de AlbumService (HU02, HU07, HU08 y HU09). [onComment], [onCreate] y [onTrack] responden a los POST. */
 class FakeAlbumService(
     private val onComment: suspend (Int, CommentRequest) -> Comment = { _, req ->
         Comment(99, req.description, req.rating)
+    },
+    private val onTrack: suspend (Int, TrackRequest) -> Track = { _, req ->
+        Track(50, req.name, req.duration)
     },
     private val onCreate: suspend (AlbumRequest) -> Album = { req ->
         album(100, req.name)
@@ -101,6 +105,7 @@ class FakeAlbumService(
 ) : AlbumService {
     var postedAlbumId: Int? = null
     var postedComment: CommentRequest? = null
+    var postedTrack: TrackRequest? = null
     var postedAlbum: AlbumRequest? = null
 
     override suspend fun getAlbum(albumId: Int): Album = block(albumId)
@@ -109,6 +114,12 @@ class FakeAlbumService(
         postedAlbumId = albumId
         postedComment = comment
         return onComment(albumId, comment)
+    }
+
+    override suspend fun addTrack(albumId: Int, track: TrackRequest): Track {
+        postedAlbumId = albumId
+        postedTrack = track
+        return onTrack(albumId, track)
     }
 
     override suspend fun createAlbum(album: AlbumRequest): Album {

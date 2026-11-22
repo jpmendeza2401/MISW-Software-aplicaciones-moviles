@@ -5,6 +5,8 @@ import com.example.aplicacionvinilos.data.model.AlbumRequest
 import com.example.aplicacionvinilos.data.model.CollectorRef
 import com.example.aplicacionvinilos.data.model.Comment
 import com.example.aplicacionvinilos.data.model.CommentRequest
+import com.example.aplicacionvinilos.data.model.Track
+import com.example.aplicacionvinilos.data.model.TrackRequest
 import com.example.aplicacionvinilos.network.AlbumService
 import com.example.aplicacionvinilos.network.AlbumServiceAdapter
 import kotlinx.coroutines.CoroutineDispatcher
@@ -24,6 +26,10 @@ class AlbumRepository(
     ) : this(AlbumServiceAdapter(albumService), computeDispatcher)
 
     suspend fun getAlbum(albumId: Int): Result<Album> = adapter.getAlbum(albumId)
+
+    // HU08: asociar un track al álbum.
+    suspend fun addTrack(albumId: Int, name: String, duration: String): Result<Track> =
+        adapter.addTrack(albumId, TrackRequest(name, duration))
 
     // HU07: crear álbum. El armado del request corre fuera del hilo principal.
     suspend fun createAlbum(
