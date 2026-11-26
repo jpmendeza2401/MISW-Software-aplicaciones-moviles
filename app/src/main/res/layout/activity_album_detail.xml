@@ -10,7 +10,8 @@
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
         android:background="@color/groove_canvas"
         app:navigationContentDescription="@string/volver"
         app:navigationIcon="@drawable/ic_arrow_back"
@@ -441,6 +442,7 @@
         android:background="#1C1A16"
         app:menu="@menu/bottom_navigation_menu"
         app:itemIconTint="#D8AD4A"
+        app:itemActiveIndicatorStyle="@style/Groove.BottomNav.ActiveIndicator"
         app:itemTextColor="#F5F0E6"
         app:labelVisibilityMode="labeled"
         app:elevation="8dp" />

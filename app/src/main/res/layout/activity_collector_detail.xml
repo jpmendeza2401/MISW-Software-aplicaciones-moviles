@@ -13,11 +13,13 @@
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
         android:background="#100F0D"
-        app:title="Detalle del coleccionista"
+        app:title="@string/detalle_coleccionista"
         app:titleTextColor="#F5F0E6"
-        app:navigationIcon="@drawable/ic_arrow_back" />
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationContentDescription="@string/volver" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -47,7 +49,10 @@
                     android:gravity="center"
                     android:text="MB"
                     android:textColor="#100F0D"
-                    android:textSize="25sp"
+                    android:maxLines="1"
+                    app:autoSizeMaxTextSize="25sp"
+                    app:autoSizeMinTextSize="8sp"
+                    app:autoSizeTextType="uniform"
                     android:textStyle="bold" />
 
             </FrameLayout>
@@ -114,7 +119,7 @@
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Álbumes" />
+                    android:text="@string/coleccionista_tab_albumes" />
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
@@ -186,6 +191,7 @@
         android:background="#1C1A16"
         app:menu="@menu/bottom_navigation_menu"
         app:itemIconTint="#D8AD4A"
+        app:itemActiveIndicatorStyle="@style/Groove.BottomNav.ActiveIndicator"
         app:itemTextColor="#F5F0E6"
         app:labelVisibilityMode="labeled"
         app:elevation="8dp" />

@@ -9,4 +9,4 @@ Feature: HU06 Consultar la información detallada de un coleccionista
     When toco el primer coleccionista de la lista
     Then veo el detalle del coleccionista que toqué
     And veo el identificador del coleccionista
-    And veo las pestañas "Álbumes", "Artistas" y "Notas"
+    And veo las pestañas "Sus álbumes", "Artistas" y "Notas"

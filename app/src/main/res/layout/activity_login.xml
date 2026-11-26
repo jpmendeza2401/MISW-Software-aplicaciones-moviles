@@ -17,7 +17,8 @@
         <!-- Header -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="wrap_content"
+            android:minHeight="64dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingHorizontal="24dp">
@@ -35,6 +36,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/playfair_display"
+                android:importantForAccessibility="no"
                 android:text="@string/login_marca"
                 android:textColor="#FFE4B8"
                 android:textSize="20sp" />
@@ -110,8 +112,9 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="280dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:maxWidth="280dp"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
                 android:lineSpacingExtra="4dp"
@@ -137,6 +140,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:labelFor="@id/emailInput"
                         android:letterSpacing="0.08"
                         android:text="@string/login_label_correo"
                         android:textColor="@color/groove_text_muted"
@@ -186,7 +190,8 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/loginButton"
                     android:layout_width="match_parent"
-                    android:layout_height="52dp"
+                    android:layout_height="wrap_content"
+                    android:minHeight="52dp"
                     android:layout_marginTop="16dp"
                     android:text="@string/login_boton"
                     android:textColor="#705000"
@@ -202,7 +207,8 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/guestButton"
                     android:layout_width="match_parent"
-                    android:layout_height="52dp"
+                    android:layout_height="wrap_content"
+                    android:minHeight="52dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/login_visitante"
                     android:textColor="#FFE4B8"
@@ -276,7 +282,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="@string/login_footer_copy"
-                android:textColor="#809B8F7E"
+                android:textColor="#9B8F7E"
                 android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>

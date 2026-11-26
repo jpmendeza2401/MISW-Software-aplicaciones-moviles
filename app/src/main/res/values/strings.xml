@@ -19,8 +19,11 @@
     <string name="comments_empty">Aún no hay comentarios</string>
     <string name="collectors_empty">No hay coleccionistas disponibles.</string>
     <string name="retry">Reintentar</string>
+    <string name="detalle_coleccionista">Detalle del coleccionista</string>
+    <string name="coleccionista_tab_albumes">Sus álbumes</string>
     <string name="collector_id_format">ID: %1$d</string>
     <string name="coleccionistas">Coleccionistas</string>
+    <string name="titulo_lista_coleccionistas">Lista de coleccionistas</string>
 
     <!-- HU05: resumen de cada tarjeta del listado, p. ej. «3 álbumes · 1 artista favorito» -->
     <string name="collector_stats_format">%1$s · %2$s</string>

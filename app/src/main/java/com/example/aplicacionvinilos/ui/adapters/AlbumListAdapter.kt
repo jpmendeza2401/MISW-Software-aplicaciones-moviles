@@ -21,6 +21,8 @@ class AlbumListAdapter(
         fun bind(album: Album, onAlbumClick: (Album) -> Unit) {
             val context = binding.root.context
             binding.albumName.text = album.name
+            binding.albumCover.contentDescription =
+                context.getString(R.string.portada_album, album.name)
             binding.albumArtist.text = album.performers.joinToString(", ") { it.name }
                 .ifEmpty { context.getString(R.string.sin_artista) }
             val px = (COVER_DP * binding.root.resources.displayMetrics.density).toInt()
