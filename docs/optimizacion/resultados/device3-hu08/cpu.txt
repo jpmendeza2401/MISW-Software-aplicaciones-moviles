@@ -1,0 +1,6 @@
+Tasks: 1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+  Mem:  4061984K total,  3747936K used,   314048K free,   125408K buffers
+ Swap:  3046464K total,   724032K used,  2322432K free,  1911008K cached
+400%cpu   0%user   0%nice   4%sys 388%idle   0%iow   8%irq   0%sirq   0%host
+  PID USER         PR  NI VIRT  RES  SHR S[%CPU] %MEM     TIME+ ARGS
+10164 u0_a230      10 -10  14G 202M 121M S  0.0   1.2   0:09.45 com.example.aplicacionvinilos
