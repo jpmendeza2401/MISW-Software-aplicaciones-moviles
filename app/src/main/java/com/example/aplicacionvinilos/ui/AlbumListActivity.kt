@@ -3,12 +3,14 @@ package com.example.aplicacionvinilos.ui
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.aplicacionvinilos.R
 import com.example.aplicacionvinilos.data.model.Album
+import com.example.aplicacionvinilos.data.session.CollectorSession
 import com.example.aplicacionvinilos.databinding.ActivityAlbumListBinding
 import com.example.aplicacionvinilos.ui.adapters.AlbumListAdapter
 import com.example.aplicacionvinilos.viewmodels.AlbumListViewModel
@@ -35,9 +37,24 @@ class AlbumListActivity : AppCompatActivity() {
         }
 
         binding.albumsList.adapter = adapter
+        setupCreateAlbum()
         binding.retryButton.setOnClickListener { viewModel.loadAlbums() }
         viewModel.albums.observe(this) { render(it) }
         setupBottomNavigation()
+    }
+
+    // HU07: crear álbum solo con coleccionista en sesión; al volver con éxito se recarga el listado.
+    private val createAlbumLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == RESULT_OK) viewModel.loadAlbums()
+        }
+
+    private fun setupCreateAlbum() {
+        binding.createAlbumButton.visibility =
+            if (CollectorSession.current != null) View.VISIBLE else View.GONE
+        binding.createAlbumButton.setOnClickListener {
+            createAlbumLauncher.launch(Intent(this, CreateAlbumActivity::class.java))
+        }
     }
 
     private fun render(state: UiState<List<Album>>) {

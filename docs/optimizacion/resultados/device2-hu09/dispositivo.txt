@@ -1,0 +1,3 @@
+sdk_gphone16k_arm64
+17
+MemTotal:        4061984 kB

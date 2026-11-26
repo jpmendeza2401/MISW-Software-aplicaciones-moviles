@@ -1,0 +1,7 @@
+Starting: Intent { cmp=com.example.aplicacionvinilos/.ui.LoginActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.example.aplicacionvinilos/.ui.LoginActivity
+TotalTime: 1283
+WaitTime: 1285
+Complete

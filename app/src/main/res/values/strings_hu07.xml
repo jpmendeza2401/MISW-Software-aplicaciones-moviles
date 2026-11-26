@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- HU07: crear álbum -->
+    <string name="crear_album">Crear álbum</string>
+    <string name="crear_album_boton">Guardar álbum</string>
+    <string name="crear_album_guardando">Guardando…</string>
+    <string name="crear_album_exito">Álbum creado</string>
+    <string name="crear_album_error">No fue posible crear el álbum: %1$s</string>
+    <string name="crear_album_nombre">Nombre *</string>
+    <string name="crear_album_portada">Portada (URL) *</string>
+    <string name="crear_album_fecha">Fecha de lanzamiento *</string>
+    <string name="crear_album_fecha_hint">Selecciona una fecha</string>
+    <string name="crear_album_descripcion">Descripción *</string>
+    <string name="crear_album_genero">Género musical *</string>
+    <string name="crear_album_genero_hint">Selecciona un género</string>
+    <string name="crear_album_sello">Sello discográfico *</string>
+    <string name="crear_album_sello_hint">Selecciona un sello</string>
+    <string name="crear_album_error_nombre">El nombre debe tener al menos %1$d caracteres.</string>
+    <string name="crear_album_error_portada">Ingresa una URL válida (http o https).</string>
+    <string name="crear_album_error_fecha">Selecciona la fecha de lanzamiento.</string>
+    <string name="crear_album_error_descripcion">Escribe la descripción del álbum.</string>
+    <string name="crear_album_error_genero">Selecciona un género de la lista.</string>
+    <string name="crear_album_error_sello">Selecciona un sello de la lista.</string>
+</resources>

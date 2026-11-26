@@ -1,0 +1,80 @@
+Applications Graphics Acceleration Info:
+Uptime: 232175 Realtime: 232175
+
+** Graphics info for pid 8867 [com.example.aplicacionvinilos] (user 0) **
+
+Stats since: 207694427640ns
+Total frames rendered: 175
+Janky frames: 166 (94.86%)
+Janky frames (legacy): 128 (73.14%)
+50th percentile: 53ms
+90th percentile: 150ms
+95th percentile: 200ms
+99th percentile: 550ms
+Number Missed Vsync: 27
+Number High input latency: 21
+Number Slow UI thread: 64
+Number Slow bitmap uploads: 1
+Number Slow issue draw commands: 165
+Number Frame deadline missed: 166
+Number Frame deadline missed (legacy): 117
+HISTOGRAM: 5ms=0 6ms=0 7ms=0 8ms=0 9ms=0 10ms=0 11ms=0 12ms=0 13ms=0 14ms=0 15ms=0 16ms=6 17ms=13 18ms=3 19ms=7 20ms=1 21ms=1 22ms=1 23ms=1 24ms=1 25ms=0 26ms=3 27ms=3 28ms=1 29ms=0 30ms=1 31ms=0 32ms=2 34ms=2 36ms=2 38ms=3 40ms=2 42ms=3 44ms=4 46ms=5 48ms=15 53ms=12 57ms=13 61ms=8 65ms=4 69ms=4 73ms=4 77ms=2 81ms=3 85ms=4 89ms=3 93ms=0 97ms=4 101ms=0 105ms=1 109ms=2 113ms=3 117ms=1 121ms=1 125ms=1 129ms=0 133ms=0 150ms=11 200ms=6 250ms=2 300ms=0 350ms=1 400ms=1 450ms=0 500ms=2 550ms=1 600ms=0 650ms=0 700ms=1 750ms=0 800ms=0 850ms=0 900ms=0 950ms=0 1000ms=0 1050ms=0 1100ms=0 1150ms=0 1200ms=0 1250ms=0 1300ms=0 1350ms=0 1400ms=0 1450ms=0 1500ms=0 1550ms=0 1600ms=0 1650ms=0 1700ms=0 1750ms=0 1800ms=0 1850ms=0 1900ms=0 1950ms=0 2000ms=0 2050ms=0 2100ms=0 2150ms=0 2200ms=0 2250ms=0 2300ms=0 2350ms=0 2400ms=0 2450ms=0 2500ms=0 2550ms=0 2600ms=0 2650ms=0 2700ms=0 2750ms=0 2800ms=0 2850ms=0 2900ms=0 2950ms=0 3000ms=0 3050ms=0 3100ms=0 3150ms=0 3200ms=0 3250ms=0 3300ms=0 3350ms=0 3400ms=0 3450ms=0 3500ms=0 3550ms=0 3600ms=0 3650ms=0 3700ms=0 3750ms=0 3800ms=0 3850ms=0 3900ms=0 3950ms=0 4000ms=0 4050ms=0 4100ms=0 4150ms=0 4200ms=0 4250ms=0 4300ms=0 4350ms=0 4400ms=0 4450ms=0 4500ms=0 4550ms=0 4600ms=0 4650ms=0 4700ms=0 4750ms=0 4800ms=0 4850ms=0 4900ms=0 4950ms=0
+50th gpu percentile: 4950ms
+90th gpu percentile: 4950ms
+95th gpu percentile: 4950ms
+99th gpu percentile: 4950ms
+GPU HISTOGRAM: 1ms=0 2ms=0 3ms=0 4ms=0 5ms=0 6ms=0 7ms=0 8ms=0 9ms=0 10ms=0 11ms=1 12ms=1 13ms=4 14ms=7 15ms=8 16ms=13 17ms=8 18ms=4 19ms=6 20ms=1 21ms=1 22ms=4 23ms=0 24ms=7 25ms=2 4950ms=108
+
+Pipeline=Skia (OpenGL)
+Memory policy:
+  Max surface area: 4021248
+  Max resource usage: 193.02MB (x48)
+  Background retention: 50% (altUiHidden = true)
+  GPU Context timeout: 10
+Contexts: 2 (stopped = 1)
+CPU Caches:
+  Glyph Cache: 272.69 KB (1 entry)
+  Glyph Count: 52 
+Total CPU memory usage:
+  279237 bytes, 272.69 KB (0.00 bytes is purgeable)
+GPU Caches:
+  Other:
+    Other: 17.62 KB (1 entry)
+  Image:
+    Texture: 2.97 MB (32 entries)
+  Scratch:
+    RenderTarget: 960.00 KB (1 entry)
+    Texture: 2.59 MB (10 entries)
+    Buffer Object: 144.00 KB (4 entries)
+Total GPU memory usage:
+  6982480 bytes, 6.66 MB (3.86 MB is purgeable)
+Pipeline Cache: inactive
+GraphicBufferAllocator buffers:
+            Handle |         Size |     W (Stride) x H | Layers |   Format |      Usage | Requestor
+0xb4007d5efe053000 |      unknown | 1344 (   0) x 2992 |      1 |        1 | 0x     b00 | VRI[AlbumDetailActivity]#2(BLAST Consumer)2
+0xb4007d5efe053930 |      unknown | 1344 (   0) x 2992 |      1 |        1 | 0x     b00 | VRI[AlbumDetailActivity]#2(BLAST Consumer)2
+0xb4007d5efe058080 |      unknown | 1344 (   0) x 2992 |      1 |        1 | 0x     b00 | VRI[AlbumDetailActivity]#2(BLAST Consumer)2
+Total allocated by GraphicBufferAllocator (estimate): 0.00 KB
+Imported gralloc buffers:
++ name:VRI[AlbumDetailActivity]#2(BLAST Consumer)2, id:372, size:15718.31KiB, w/h:1344x2992, usage: 0xb00, req fmt:1, fourcc/mod:875708993/0, dataspace: 0x8810000, compressed: false
++ name:VRI[AlbumDetailActivity]#2(BLAST Consumer)2, id:371, size:15718.31KiB, w/h:1344x2992, usage: 0xb00, req fmt:1, fourcc/mod:875708993/0, dataspace: 0x8810000, compressed: false
++ name:VRI[AlbumDetailActivity]#2(BLAST Consumer)2, id:370, size:15718.31KiB, w/h:1344x2992, usage: 0xb00, req fmt:1, fourcc/mod:875708993/0, dataspace: 0x8810000, compressed: false
+Total imported by gralloc: 47154.94KiB
+
+Profile data in ms:
+
+	com.example.aplicacionvinilos/com.example.aplicacionvinilos.ui.AlbumListActivity/android.view.ViewRootImpl@b2d449d (visibility=8)
+	com.example.aplicacionvinilos/com.example.aplicacionvinilos.ui.AlbumDetailActivity/android.view.ViewRootImpl@11f17a7 (visibility=0)
+View hierarchy:
+
+  com.example.aplicacionvinilos/com.example.aplicacionvinilos.ui.AlbumListActivity/android.view.ViewRootImpl@b2d449d
+  103 views, 161.73 kB of render nodes
+
+  com.example.aplicacionvinilos/com.example.aplicacionvinilos.ui.AlbumDetailActivity/android.view.ViewRootImpl@11f17a7
+  94 views, 177.15 kB of render nodes
+
+
+Total ViewRootImpl   : 2
+Total attached Views : 197
+Total RenderNode     : 338.88 kB (used) / 733.43 kB (capacity)
+

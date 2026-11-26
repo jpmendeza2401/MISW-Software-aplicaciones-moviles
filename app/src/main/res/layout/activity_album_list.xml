@@ -79,6 +79,19 @@
 
         </LinearLayout>
 
+        <!-- HU07: solo visible para el coleccionista en sesión -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/createAlbumButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/crear_album"
+            android:src="@drawable/ic_add"
+            android:visibility="gone"
+            app:backgroundTint="#D8AD4A"
+            app:tint="#100F0D" />
+
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

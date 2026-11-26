@@ -3,6 +3,8 @@ package com.example.aplicacionvinilos.data.repository
 import com.example.aplicacionvinilos.data.model.Album
 import com.example.aplicacionvinilos.data.model.Band
 import com.example.aplicacionvinilos.data.model.Collector
+import com.example.aplicacionvinilos.data.model.CollectorAlbum
+import com.example.aplicacionvinilos.data.model.CollectorAlbumRequest
 import com.example.aplicacionvinilos.data.session.CollectorSession
 import com.example.aplicacionvinilos.network.ApiService
 import kotlinx.coroutines.test.runTest
@@ -21,6 +23,9 @@ class CollectorRepositoryLoginTest {
         override suspend fun getAlbums(): List<Album> = error("no")
         override suspend fun getCollectors(): List<Collector> = items.toList()
         override suspend fun getCollector(collectorId: Int): Collector = error("no")
+        override suspend fun addAlbumToCollector(
+            collectorId: Int, albumId: Int, body: CollectorAlbumRequest
+        ): CollectorAlbum = error("no")
     })
 
     @After
