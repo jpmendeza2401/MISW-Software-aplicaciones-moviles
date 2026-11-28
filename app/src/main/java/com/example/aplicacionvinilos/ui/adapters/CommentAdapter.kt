@@ -13,8 +13,8 @@ class CommentAdapter : ListAdapter<Comment, CommentAdapter.CommentViewHolder>(It
         RecyclerView.ViewHolder(binding.root) {
         fun bind(comment: Comment) {
             val filled = comment.rating.coerceIn(0, MAX_RATING)
-            binding.commentStars.text =
-                FILLED_STAR.repeat(filled) + EMPTY_STAR.repeat(MAX_RATING - filled)
+            val stars = FILLED_STAR.repeat(filled) + EMPTY_STAR.repeat(MAX_RATING - filled)
+            binding.commentStars.text = stars
             binding.commentText.text = comment.description
         }
     }

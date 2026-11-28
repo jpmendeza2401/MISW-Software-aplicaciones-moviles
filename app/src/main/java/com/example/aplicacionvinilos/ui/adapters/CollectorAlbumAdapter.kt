@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.aplicacionvinilos.R
 import com.example.aplicacionvinilos.data.model.CollectorAlbum
 import com.example.aplicacionvinilos.databinding.ItemCollectorAlbumBinding
 
@@ -16,9 +17,13 @@ class CollectorAlbumAdapter :
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(album: CollectorAlbum) {
-            binding.albumId.text = "Identificador: ${album.id}"
-            binding.albumPrice.text = "Precio: ${album.price}"
-            binding.albumStatus.text = "Estado: ${album.status}"
+            val context = binding.root.context
+            binding.albumId.text =
+                context.getString(R.string.coleccionista_album_id, album.id.toString())
+            binding.albumPrice.text =
+                context.getString(R.string.coleccionista_album_precio, album.price.toString())
+            binding.albumStatus.text =
+                context.getString(R.string.coleccionista_album_estado, album.status.toString())
         }
     }
 

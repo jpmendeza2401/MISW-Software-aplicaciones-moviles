@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Textos que estaban escritos en código y en layouts -->
+    <string name="coleccionista_album_id">Identificador: %1$s</string>
+    <string name="coleccionista_album_precio">Precio: %1$s</string>
+    <string name="coleccionista_album_estado">Estado: %1$s</string>
+    <string name="coleccionista_telefono">Teléfono: %1$s</string>
+    <string name="coleccionista_correo">Correo: %1$s</string>
+    <string name="coleccionista_info_contacto">Información de contacto</string>
+    <string name="coleccionista_tab_albumes">Álbumes</string>
+    <string name="coleccionista_tab_artistas">Artistas</string>
+    <string name="coleccionista_tab_notas">Notas</string>
+    <string name="coleccionista_album_etiqueta">Álbum</string>
+    <string name="imagen_artista">Imagen del artista</string>
+</resources>

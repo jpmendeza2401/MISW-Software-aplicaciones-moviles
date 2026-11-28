@@ -9,7 +9,11 @@
     <string name="add_track_saving">Guardando…</string>
     <string name="add_track_success">Track agregado</string>
     <string name="add_track_error">No fue posible agregar el track: %1$s</string>
-    <string name="add_track_error_name">El nombre debe tener al menos %1$d caracteres.</string>
+    <plurals name="add_track_error_name">
+        <item quantity="one">El nombre debe tener al menos %1$d carácter.</item>
+        <item quantity="many">El nombre debe tener al menos %1$d caracteres.</item>
+        <item quantity="other">El nombre debe tener al menos %1$d caracteres.</item>
+    </plurals>
     <string name="add_track_error_format">La duración debe tener el formato m:ss, por ejemplo 5:05.</string>
     <string name="add_track_error_short">La duración mínima es 1 minuto (1:00).</string>
 </resources>

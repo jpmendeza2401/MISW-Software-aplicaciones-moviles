@@ -58,15 +58,12 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <TextView
+        <ImageView
             android:layout_width="24dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="›"
-            android:textColor="#D8AD4A"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:contentDescription="@null" />
+            android:layout_height="24dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="#D8AD4A" />
 
     </LinearLayout>
 

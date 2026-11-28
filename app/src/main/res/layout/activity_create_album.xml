@@ -104,7 +104,7 @@
                 android:cursorVisible="false"
                 android:focusable="false"
                 android:hint="@string/crear_album_fecha_hint"
-                android:inputType="none"
+                android:inputType="date"
                 android:padding="14dp"
                 android:textColor="@color/groove_text_primary"
                 android:textColorHint="@color/groove_text_subtle"

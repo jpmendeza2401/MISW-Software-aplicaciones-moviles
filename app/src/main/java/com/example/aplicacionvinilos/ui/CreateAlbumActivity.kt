@@ -184,7 +184,7 @@ class CreateAlbumActivity : AppCompatActivity() {
         }
         binding.errorText.text = when (error) {
             AlbumValidator.Error.INVALID_NAME ->
-                getString(R.string.crear_album_error_nombre, AlbumValidator.MIN_NAME_LENGTH)
+                resources.getQuantityString(R.plurals.crear_album_error_nombre, AlbumValidator.MIN_NAME_LENGTH, AlbumValidator.MIN_NAME_LENGTH)
             AlbumValidator.Error.INVALID_COVER -> getString(R.string.crear_album_error_portada)
             AlbumValidator.Error.INVALID_DATE -> getString(R.string.crear_album_error_fecha)
             AlbumValidator.Error.EMPTY_DESCRIPTION -> getString(R.string.crear_album_error_descripcion)

@@ -246,30 +246,19 @@
             </LinearLayout>
 
             <!-- Footer -->
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:drawablePadding="4dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:importantForAccessibility="no"
-                    android:src="@drawable/ic_graphic_eq"
-                    app:tint="#9B8F7E" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:letterSpacing="0.12"
-                    android:text="@string/login_footer_rpm"
-                    android:textColor="#9B8F7E"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                android:letterSpacing="0.12"
+                android:text="@string/login_footer_rpm"
+                android:textColor="#9B8F7E"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_graphic_eq_16"
+                app:drawableTint="#9B8F7E" />
 
             <TextView
                 android:layout_width="wrap_content"

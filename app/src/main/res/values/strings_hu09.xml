@@ -15,7 +15,11 @@
     <string name="add_comment_success">Comentario publicado</string>
     <string name="add_comment_error">No fue posible publicar el comentario: %1$s</string>
     <string name="add_comment_error_empty">Escribe la descripción del comentario.</string>
-    <string name="add_comment_error_too_long">La descripción no puede superar %1$d caracteres.</string>
+    <plurals name="add_comment_error_too_long">
+        <item quantity="one">La descripción no puede superar %1$d carácter.</item>
+        <item quantity="many">La descripción no puede superar %1$d caracteres.</item>
+        <item quantity="other">La descripción no puede superar %1$d caracteres.</item>
+    </plurals>
     <string name="add_comment_error_rating">Selecciona una calificación entre 1 y 5 estrellas.</string>
 
 </resources>

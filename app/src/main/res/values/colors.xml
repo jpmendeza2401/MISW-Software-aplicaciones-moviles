@@ -11,4 +11,5 @@
     <color name="groove_on_primary">#121113</color>
     <color name="groove_hairline">#0DF5EFEB</color>
     <color name="groove_card_border">#0FF5EFEB</color>
+    <color name="fondo_listados">#100F0D</color>
 </resources>
