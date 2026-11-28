@@ -45,11 +45,15 @@ class AlbumDetailActivity : AppCompatActivity() {
         binding = ActivityAlbumDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
-            // HU09: se suma el teclado (ime) para que el cuadro de comentario no quede oculto.
             val systemBars = insets.getInsets(
-                WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.ime()
+                WindowInsetsCompat.Type.systemBars()
             )
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            v.setPadding(
+                systemBars.left,
+                systemBars.top,
+                systemBars.right,
+                systemBars.bottom
+            )
             insets
         }
 
