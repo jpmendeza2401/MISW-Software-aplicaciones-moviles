@@ -15,7 +15,11 @@
     <string name="crear_album_genero_hint">Selecciona un género</string>
     <string name="crear_album_sello">Sello discográfico *</string>
     <string name="crear_album_sello_hint">Selecciona un sello</string>
-    <string name="crear_album_error_nombre">El nombre debe tener al menos %1$d caracteres.</string>
+    <plurals name="crear_album_error_nombre">
+        <item quantity="one">El nombre debe tener al menos %1$d carácter.</item>
+        <item quantity="many">El nombre debe tener al menos %1$d caracteres.</item>
+        <item quantity="other">El nombre debe tener al menos %1$d caracteres.</item>
+    </plurals>
     <string name="crear_album_error_portada">Ingresa una URL válida (http o https).</string>
     <string name="crear_album_error_fecha">Selecciona la fecha de lanzamiento.</string>
     <string name="crear_album_error_descripcion">Escribe la descripción del álbum.</string>

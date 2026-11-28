@@ -192,7 +192,7 @@ class AlbumDetailActivity : AppCompatActivity() {
         }
         binding.trackErrorText.text = when (error) {
             TrackValidator.Error.INVALID_NAME ->
-                getString(R.string.add_track_error_name, TrackValidator.MIN_NAME_LENGTH)
+                resources.getQuantityString(R.plurals.add_track_error_name, TrackValidator.MIN_NAME_LENGTH, TrackValidator.MIN_NAME_LENGTH)
             TrackValidator.Error.INVALID_DURATION_FORMAT -> getString(R.string.add_track_error_format)
             TrackValidator.Error.DURATION_TOO_SHORT -> getString(R.string.add_track_error_short)
         }
@@ -229,7 +229,7 @@ class AlbumDetailActivity : AppCompatActivity() {
         binding.commentErrorText.text = when (error) {
             CommentValidator.Error.EMPTY_DESCRIPTION -> getString(R.string.add_comment_error_empty)
             CommentValidator.Error.DESCRIPTION_TOO_LONG ->
-                getString(R.string.add_comment_error_too_long, CommentValidator.MAX_DESCRIPTION_LENGTH)
+                resources.getQuantityString(R.plurals.add_comment_error_too_long, CommentValidator.MAX_DESCRIPTION_LENGTH, CommentValidator.MAX_DESCRIPTION_LENGTH)
             CommentValidator.Error.INVALID_RATING -> getString(R.string.add_comment_error_rating)
         }
         binding.commentErrorText.visibility = View.VISIBLE

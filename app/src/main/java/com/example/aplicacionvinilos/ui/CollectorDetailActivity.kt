@@ -184,10 +184,10 @@ class CollectorDetailActivity : AppCompatActivity() {
             getString(R.string.collector_id_format, collector.id)
 
         binding.collectorTelephone.text =
-            "Teléfono: ${collector.telephone}"
+            getString(R.string.coleccionista_telefono, collector.telephone.toString())
 
         binding.collectorEmail.text =
-            "Correo: ${collector.email}"
+            getString(R.string.coleccionista_correo, collector.email.toString())
 
         albumAdapter.submitList(collector.collectorAlbums)
         performerAdapter.submitList(collector.favoritePerformers)

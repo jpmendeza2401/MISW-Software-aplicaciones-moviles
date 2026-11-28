@@ -16,9 +16,9 @@ class CollectorCommentAdapter :
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(comment: Comment) {
-            binding.commentRating.text =
-                "★".repeat(comment.rating.coerceIn(0, 5)) +
-                        "☆".repeat(5 - comment.rating.coerceIn(0, 5))
+            val filled = comment.rating.coerceIn(0, 5)
+            val stars = "★".repeat(filled) + "☆".repeat(5 - filled)
+            binding.commentRating.text = stars
 
             binding.commentDescription.text = comment.description
         }

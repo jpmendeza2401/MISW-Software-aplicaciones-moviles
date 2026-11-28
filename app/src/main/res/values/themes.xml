@@ -7,6 +7,11 @@
 
     <style name="Theme.AplicacionVinilos" parent="Base.Theme.AplicacionVinilos" />
 
+    <!-- Pantallas con fondo oscuro fijo: lo pinta la ventana y no la vista raíz -->
+    <style name="Theme.AplicacionVinilos.FondoOscuro">
+        <item name="android:windowBackground">@color/fondo_listados</item>
+    </style>
+
     <style name="Theme.AplicacionVinilos.Groove" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/groove_primary</item>
         <item name="colorOnPrimary">@color/groove_on_primary</item>
@@ -58,7 +63,7 @@
         <item name="android:fontFamily">@font/manrope</item>
         <item name="android:textColor">@color/groove_text_muted</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:textFontWeight">600</item>
+        <item name="android:textFontWeight" tools:targetApi="28">600</item>
         <item name="android:letterSpacing">0.08</item>
         <item name="android:textAllCaps">true</item>
     </style>

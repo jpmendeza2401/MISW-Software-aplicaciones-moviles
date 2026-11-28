@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="170dp"
             android:scaleType="centerCrop"
-            android:contentDescription="Imagen del artista"/>
+            android:contentDescription="@string/imagen_artista"/>
 
         <TextView
             android:id="@+id/performerName"
